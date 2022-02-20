@@ -1,0 +1,70 @@
+%!TEX TS-program = xelatex
+
+\documentclass[a4paper,14pt]{extarticle} % 14й шрифт
+\input{inc/preamble} % Подключаем преамбулу
+
+%%% Начало документа
+\begin{document}
+
+%\includepdf{otchpr} % Индивидуальное задание
+%\includepdf{iz} % Индивидуальное задание
+%\includepdf[pages={1,2}]{task} % Задание на диплом печатается на одном листе с двух сторон
+%помимо ПЗ и задания, в диплом также вкладывается отзыв руководителя и рецензия
+
+%В рамках практики будет рассмотрен только этап обзора и выбора оступных средств пакета Blender.
+%\tableofcontents % Содержание 
+%\addtocontents{toc}{\protect\thispagestyle{empty}}
+%\clearpage
+
+\pagestyle{empty}
+{
+	\renewcommand{\thispagestyle}[1]{}
+	\tableofcontents
+}
+\clearpage
+\pagestyle{plain}
+
+% Нумерация страниц по центру снизу
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage} % Page numbering for center header  
+\fancyheadoffset{0mm}
+\fancyfootoffset{0mm}
+\setlength{\headheight}{17pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{ 
+	\fancyhf{}
+	\rhead{\thepage}
+}
+
+%\pagestyle{empty}
+%\tableofcontents
+%\clearpage
+%\pagestyle{plain}
+
+\input{inc/perec} % Введение
+\input{inc/0-intro} % Введение
+%\input{inc/zz0-obzoroblasti}
+%\input{inc/zz1-proektirovanie}
+%\input{inc/zz2-realizaciya} % Реализация
+%\input{inc/2-literature} % Обзор современных методов и технологий серверной виртуализации
+%\input{inc/3-analyze} % Системный анализ виртуальной инфраструктуры
+%\input{inc/4-description} % Описание виртуальной инфраструктуры
+%\input{inc/5-adminguide} % Руководство администратора
+%\input{inc/6-userguide} % Руководство пользователя
+%\input{inc/7-testing} % Результаты тестирования
+%\input{inc/8-lifesafety} % Безопасность жизнедеятельности
+%\input{inc/0-conclusion} % Заключение
+%\input{inc/0-bibliography} % Библиографический список
+
+%\includepdf{otziv}
+
+% Приложения
+%\input{inc/a-app} % UI
+%\input{inc/b-app} % Основной оператор
+
+%\includepdf{act} % Акт внедрения
+
+\end{document}
+%%% Конец документа

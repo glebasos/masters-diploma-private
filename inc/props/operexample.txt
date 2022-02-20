@@ -1,0 +1,14 @@
+class HelloWorldMinimal(bpy.types.Operator):
+    bl_idname = "wm.hello_world"
+    bl_label = "Minimal Operator"
+
+    def execute(self, context):
+        # Report "Hello World" to the Info Area
+        self.report({'INFO'}, "Hello World")
+
+        return {'FINISHED'}
+
+bpy.utils.register_class(HelloWorldMinimal)
+
+# testoviy vizov operatora
+bpy.ops.wm.hello_world()

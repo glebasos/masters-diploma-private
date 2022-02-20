@@ -1,0 +1,5 @@
+\select@language {russian}
+\contentsline {paragraph}{\hbox to\hsize {\hss {Перечень обозначений и сокращений}\hss }\vspace {1.5em}}{4}{section*.1}% 
+\contentsline {section}{\uppercase {Перечень обозначений и сокращений}}{4}{section*.1}% 
+\contentsline {paragraph}{\hbox to\hsize {\hss {Введение}\hss }\vspace {1.5em}}{5}{section*.2}% 
+\contentsline {section}{\uppercase {Введение}}{5}{section*.2}% 

@@ -1,0 +1,17 @@
+from bpy.props import (BoolProperty,
+                       IntProperty,
+                       )
+
+my_bool : BoolProperty(
+    name="On or Off",
+    description="Boolean property",
+    default = False
+    )
+
+my_int : IntProperty(
+    name = "Value",
+    description="Integer property",
+    default = 50,
+    min = 0,
+    max = 100
+    )
