@@ -13,6 +13,9 @@
     literate={--}{{-{}-}}2 % Корректно отображать двойной дефис
 }
 
+\usepackage{eqexpl}
+\eqexplSetDelim{--}
+
 % Шрифты, xelatex
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{Times New Roman} % Нормоконтроллеры хотят именно его
@@ -47,7 +50,7 @@
     colorlinks, urlcolor={black}, % Все ссылки черного цвета, кликабельные
     linkcolor={black}, citecolor={black}, filecolor={black},
     pdfauthor={Глеб Щенников},
-    pdftitle={Плагин захвата мимики}
+    pdftitle={}
 }
 
 % Оформление библиографии и подрисуночных записей через точку

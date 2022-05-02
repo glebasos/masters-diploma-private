@@ -9,13 +9,16 @@
 \contentsline {subsubsection}{\numberline {1.1.2}Исследование операций}{11}{subsubsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.2}Разработка возможных направлений проведения исследований и методов решений отдельных задач, обоснование выбора оптимального варианта}{12}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}Обоснование применяемых технологий и инструментов.}{12}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Уточненная постановка задачи и требования к прототипу решения. Выводы}{15}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.4}Уточненная постановка задачи и требования к прототипу решения.}{15}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Выводы.}{17}{subsection.1.5}%
 \contentsline {section}{\numberline {2}Проектирование}{18}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Проектирование архитектуры прототипа системы решения, включая разработку структуры (компоненты и связи между ними), внутреннего и внешнего функционирования.}{18}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Анализ доступных средств платформы .Net}{18}{subsubsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.2}Определение алгоритмов, по которым будет работать программный модуль}{19}{subsubsection.2.1.2}%
 \contentsline {subsubsection}{\numberline {2.1.3}Выбор типа базы данных и её провайдера.}{20}{subsubsection.2.1.3}%
 \contentsline {subsubsection}{\numberline {2.1.4}Проектирование архитектуры}{21}{subsubsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.2}Разработка прототипов алгоритмов (как отдельных компонентов и их взаимосвязей, так и в целом системных), структур данных.}{21}{subsection.2.2}%
-\contentsline {paragraph}{\centerline {{Список использованных источников}}\vspace {1.5em}}{24}{section*.4}%
-\contentsline {section}{\uppercase {Список использованных источников}}{24}{section*.4}%
+\contentsline {subsection}{\numberline {2.2}Разработка прототипов алгоритмов (как отдельных компонентов и их взаимосвязей, так и в целом системных), структур данных.}{23}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Типы данных Google OR-Tools}{23}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Определение требований к модели}{25}{subsubsection.2.2.2}%
+\contentsline {paragraph}{\centerline {{Список использованных источников (старый)}}\vspace {1.5em}}{27}{section*.6}%
+\contentsline {section}{\uppercase {Список использованных источников (старый)}}{27}{section*.6}%
