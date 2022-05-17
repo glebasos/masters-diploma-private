@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{boolean\PYGZus{}variable1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewBoolVar}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Boolean Variable\PYGZdq{}}\PYG{p}{);}
+\end{Verbatim}

@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{optional\PYGZus{}interval\PYGZus{}variable}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewOptionalIntervalVar}\PYG{p}{(}\PYG{n}{start}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{size}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{end}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{is\PYGZus{}present}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Optional Interval Variable\PYGZdq{}}\PYG{p}{);}
+\end{Verbatim}

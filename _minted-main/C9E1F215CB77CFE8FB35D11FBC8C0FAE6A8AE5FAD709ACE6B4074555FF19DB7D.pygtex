@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{integer\PYGZus{}variable}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewIntVar}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{100}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Integer Varible\PYGZdq{}}\PYG{p}{);}
+\end{Verbatim}

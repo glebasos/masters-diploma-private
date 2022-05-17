@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{//работы по рабочему}
+\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntervalVar}\PYG{p}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{jobIntervals\PYGZus{}by\PYGZus{}worker}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{w}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{intervals\PYGZus{}by\PYGZus{}worker}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{flatlist}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{w}\PYG{p}{.}\PYG{n}{SelectMany}\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{).}\PYG{n}{ToList}\PYG{p}{();}
+\PYG{+w}{    }\PYG{n}{jobIntervals\PYGZus{}by\PYGZus{}worker}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{flatlist}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{//работы одного рабочего не пересекаются}
+\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{ji}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{jobIntervals\PYGZus{}by\PYGZus{}worker}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{ji}\PYG{p}{.}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{sleepIntervals}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{model}\PYG{p}{.}\PYG{n}{AddNoOverlap}\PYG{p}{(}\PYG{n}{ji}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,10 +1,19 @@
 %%% Преамбула %%%
-
 \usepackage{fontspec} % XeTeX
 \usepackage{xunicode} % Unicode для XeTeX
 \usepackage{xltxtra}  % Верхние и нижние индексы
 \usepackage{pdfpages} % Вставка PDF
-
+\usepackage{easyReview} % Правки
+\makeatletter
+\newcommand{\currentfontsize}{\fontsize{\f@size}{\f@baselineskip}\selectfont}
+\makeatother
+\usepackage{fontspec,minted}
+\newfontfamily\consolas{Courier New}[NFSSFamily=ArialFamily]
+\setminted[python]{fontfamily=ArialFamily, fontsize=\currentfontsize}
+\newfontfamily\consolascs{Courier New}[NFSSFamily=ArialFamily]
+\setminted[csharp]{fontfamily=ArialFamily, fontsize=\currentfontsize, breaklines}
+\setmonofont{Consolas}
+\usemintedstyle{autumn}
 \usepackage{listings} % Оформление исходного кода
 \lstset{
     basicstyle=\small\ttfamily, % Размер и тип шрифта

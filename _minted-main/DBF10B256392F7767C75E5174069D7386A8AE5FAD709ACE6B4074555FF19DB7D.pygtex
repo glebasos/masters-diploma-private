@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{...}
+\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{w}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{workers}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{p}{...}
+\PYG{+w}{    }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{jt}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{job\PYGZus{}types}\PYG{p}{)}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{p}{...}
+\PYG{+w}{        }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{job}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{jobs}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{jt}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{n}{job}\PYG{p}{.}\PYG{n}{Type}\PYG{+w}{ }\PYG{p}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{w}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{n}{job}\PYG{p}{.}\PYG{n}{WorkerID}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{performed\PYGZus{}at}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewBoolVar}\PYG{p}{(}\PYG{l+s}{\PYGZdl{}\PYGZdq{}performed by \PYGZob{}w\PYGZcb{}wID \PYGZob{}jt\PYGZcb{}type \PYGZob{}job.ID\PYGZcb{}jID\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{                }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{start}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewIntVar}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{horizon}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdl{}\PYGZdq{}start of \PYGZob{}w\PYGZcb{} \PYGZob{}jt\PYGZcb{} \PYGZob{}job.ID\PYGZcb{}\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{                }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{end}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewIntVar}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{horizon}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdl{}\PYGZdq{}end of \PYGZob{}w\PYGZcb{} \PYGZob{}jt\PYGZcb{} \PYGZob{}job.ID\PYGZcb{}\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{                }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{optint}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewOptionalIntervalVar}\PYG{p}{(}\PYG{n}{start}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{job}\PYG{p}{.}\PYG{n}{TimeSpanMinutes}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{end}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{performed\PYGZus{}at}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdl{}\PYGZdq{}interval of \PYGZob{}w\PYGZcb{} \PYGZob{}jt\PYGZcb{} \PYGZob{}job.ID\PYGZcb{}\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{                }\PYG{p}{...}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

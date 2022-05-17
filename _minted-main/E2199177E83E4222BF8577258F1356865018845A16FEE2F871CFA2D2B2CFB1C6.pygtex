@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{for} \PYG{n}{h} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{horizon}\PYG{p}{)}
+    \PYG{o}{...}
+    \PYG{k}{for} \PYG{n}{w} \PYG{o+ow}{in} \PYG{n}{workers}
+        \PYG{o}{...}
+        \PYG{k}{for} \PYG{n}{jt} \PYG{o+ow}{in} \PYG{n}{job\PYGZus{}types}
+            \PYG{o}{...}
+            \PYG{k}{for} \PYG{n}{job} \PYG{o+ow}{in} \PYG{n}{jobs}
+\end{Verbatim}

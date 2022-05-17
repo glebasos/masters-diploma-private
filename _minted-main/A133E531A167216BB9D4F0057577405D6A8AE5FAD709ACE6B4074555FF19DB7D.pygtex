@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{//определим нерабочие (ночные интервалы) \PYGZhy{} допустим с 9 утра до 9 вечера}
+\PYG{c+c1}{//даты планирования выбираются пользователем с 00:00 по 00:00}
+\PYG{c+c1}{//0 + 540 =\PYGZgt{} ночь; +720 =\PYGZgt{} день; + 180 =\PYGZgt{} остатки ночи}
+\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntervalVar}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{sleepIntervals}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{dayCounter}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}
+
+\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{DateTime}\PYG{+w}{ }\PYG{n}{day}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{EachDay}\PYG{p}{(}\PYG{n}{reftime}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{lastday}\PYG{p}{))}
+\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{st}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{dayCounter}\PYG{+w}{ }\PYG{p}{*}\PYG{+w}{ }\PYG{l+m}{1440}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{((}\PYG{n}{day}\PYG{p}{.}\PYG{n}{DayOfWeek}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{n}{DayOfWeek}\PYG{p}{.}\PYG{n}{Saturday}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{||}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{day}\PYG{p}{.}\PYG{n}{DayOfWeek}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{n}{DayOfWeek}\PYG{p}{.}\PYG{n}{Sunday}\PYG{p}{))}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{c+c1}{//по выходным не работаем}
+\PYG{+w}{        }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{fin1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{st}\PYG{+w}{ }\PYG{p}{+}\PYG{+w}{ }\PYG{l+m}{1440}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{siSS}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewIntervalVar}\PYG{p}{(}\PYG{n}{st}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{1440}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fin1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdl{}\PYGZdq{}sat/sun \PYGZob{}dayCounter\PYGZcb{}\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{sleepIntervals}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{siSS}\PYG{p}{);}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k}{else}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{c+c1}{//по будням \PYGZhy{} с 9 до 9}
+\PYG{+w}{        }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{fin}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{st}\PYG{+w}{ }\PYG{p}{+}\PYG{+w}{ }\PYG{l+m}{540}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{si}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewIntervalVar}\PYG{p}{(}\PYG{n}{st}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{540}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fin}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdl{}\PYGZdq{}sleep 1 of day \PYGZob{}dayCounter\PYGZcb{}\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{sleepIntervals}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{si}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{st}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fin}\PYG{+w}{ }\PYG{p}{+}\PYG{+w}{ }\PYG{l+m}{720}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//пропускаем рабочие 12 часов}
+\PYG{+w}{        }\PYG{n}{fin}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{st}\PYG{+w}{ }\PYG{p}{+}\PYG{+w}{ }\PYG{l+m}{180}\PYG{p}{;}
+\PYG{+w}{        }\PYG{c+c1}{//второй ночной интервал}
+\PYG{+w}{        }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{si2}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewIntervalVar}\PYG{p}{(}\PYG{n}{st}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{180}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fin}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdl{}\PYGZdq{}sleep 2 of day \PYGZob{}dayCounter\PYGZcb{}\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{sleepIntervals}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{si2}\PYG{p}{);}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{n}{dayCounter}\PYG{p}{++;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
