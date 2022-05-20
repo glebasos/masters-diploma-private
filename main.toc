@@ -26,7 +26,7 @@
 \contentsline {subsubsection}{\numberline {3.1.2}Описание прототипа программной реализации}{29}{subsubsection.3.1.2}%
 \contentsline {subsubsection}{\numberline {3.1.3}Описание модели базы данных}{29}{subsubsection.3.1.3}%
 \contentsline {subsubsection}{\numberline {3.1.4}Прототипирование ЕАМ-системы}{31}{subsubsection.3.1.4}%
-\contentsline {subsubsection}{\numberline {3.1.5}Моделирование системы средствами программирования в ограничениях}{31}{subsubsection.3.1.5}%
-\contentsline {subsection}{\numberline {3.2}Экспериментальные исследования прототипа решения}{36}{subsection.3.2}%
-\contentsline {paragraph}{\centerline {{Список использованных источников (старый)}}\vspace {1.5em}}{37}{section*.13}%
-\contentsline {section}{\uppercase {Список использованных источников (старый)}}{37}{section*.13}%
+\contentsline {subsubsection}{\numberline {3.1.5}Моделирование системы средствами программирования в ограничениях}{35}{subsubsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.2}Экспериментальные исследования прототипа решения}{44}{subsection.3.2}%
+\contentsline {paragraph}{\centerline {{Список использованных источников (старый)}}\vspace {1.5em}}{45}{section*.20}%
+\contentsline {section}{\uppercase {Список использованных источников (старый)}}{45}{section*.20}%

@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{//возьмем множество всех работ}
+\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{flatbools}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{bools\PYGZus{}by\PYGZus{}worker}\PYG{p}{.}\PYG{n}{SelectMany}\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{).}\PYG{n}{SelectMany}\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{);}
+\PYG{c+c1}{//целевая функция \PYGZhy{} максимизировать количество работ}
+\PYG{n}{model}\PYG{p}{.}\PYG{n}{Maximize}\PYG{p}{(}\PYG{n}{LinearExpr}\PYG{p}{.}\PYG{n}{Sum}\PYG{p}{(}\PYG{n}{flatbools}\PYG{p}{));}
+\end{Verbatim}

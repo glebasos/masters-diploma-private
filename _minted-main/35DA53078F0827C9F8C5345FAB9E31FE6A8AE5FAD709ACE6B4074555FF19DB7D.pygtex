@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{///разделяем performed\PYGZus{}at по типам работы}
+\PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}разделяем performed\PYGZus{}at по типам работы\PYGZdq{}}\PYG{p}{);}
+\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntVar}\PYG{p}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{performedAt\PYGZus{}by\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{t}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{job\PYGZus{}types}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntVar}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{perflist}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{    }\PYG{n}{performedAt\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{perflist}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{b\PYGZus{}worker}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{bools\PYGZus{}by\PYGZus{}worker}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{b\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{b\PYGZus{}type}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{b\PYGZus{}worker}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{b\PYGZus{}type}\PYG{p}{++)}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{flatperf}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{b\PYGZus{}worker}\PYG{p}{[}\PYG{n}{b\PYGZus{}type}\PYG{p}{];}
+\PYG{+w}{        }\PYG{n}{performedAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{b\PYGZus{}type}\PYG{p}{].}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{flatperf}\PYG{p}{);}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{performedAt\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{++)}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{model}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{LinearExpr}\PYG{p}{.}\PYG{n}{Sum}\PYG{p}{(}\PYG{n}{performedAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}\PYG{+w}{ }\PYG{p}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{job\PYGZus{}type\PYGZus{}num}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

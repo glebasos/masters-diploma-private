@@ -7,9 +7,7 @@
 
 \PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{DateTime}\PYG{+w}{ }\PYG{n}{day}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{EachDay}\PYG{p}{(}\PYG{n}{reftime}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{lastday}\PYG{p}{))}
 \PYG{p}{\PYGZob{}}
-
 \PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{st}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{dayCounter}\PYG{+w}{ }\PYG{p}{*}\PYG{+w}{ }\PYG{l+m}{1440}\PYG{p}{;}
-
 \PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{((}\PYG{n}{day}\PYG{p}{.}\PYG{n}{DayOfWeek}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{n}{DayOfWeek}\PYG{p}{.}\PYG{n}{Saturday}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{||}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{day}\PYG{p}{.}\PYG{n}{DayOfWeek}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{n}{DayOfWeek}\PYG{p}{.}\PYG{n}{Sunday}\PYG{p}{))}
 \PYG{+w}{    }\PYG{p}{\PYGZob{}}
 \PYG{+w}{        }\PYG{c+c1}{//по выходным не работаем}
@@ -29,7 +27,6 @@
 \PYG{+w}{        }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{si2}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewIntervalVar}\PYG{p}{(}\PYG{n}{st}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{180}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fin}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdl{}\PYGZdq{}sleep 2 of day \PYGZob{}dayCounter\PYGZcb{}\PYGZdq{}}\PYG{p}{);}
 \PYG{+w}{        }\PYG{n}{sleepIntervals}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{si2}\PYG{p}{);}
 \PYG{+w}{    }\PYG{p}{\PYGZcb{}}
-
 \PYG{+w}{    }\PYG{n}{dayCounter}\PYG{p}{++;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}

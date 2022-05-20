@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{//для третьего типа (плановая работа) \PYGZhy{} работы не чаще раза в день}
+\PYG{+w}{    }\PYG{p}{...}
+\PYG{+w}{    }\PYG{k}{if}\PYG{p}{(}\PYG{n}{type}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{l+m}{3}\PYG{p}{)}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{startAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{k}\PYG{p}{].}\PYG{n}{Count}\PYG{+w}{ }\PYG{p}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m}{1}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{++)}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{+}\PYG{l+m}{1}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{startAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{k}\PYG{p}{].}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{p}{++)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{c+c1}{//if (b\PYGZhy{}a\PYGZgt{}1440) =\PYGZgt{} b=0}
+\PYG{+w}{                }\PYG{n}{model}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{startAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{k}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{endAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{k}\PYG{p}{][}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{\PYGZgt{}=}\PYG{+w}{ }\PYG{l+m}{1440}\PYG{p}{).}\PYG{n}{OnlyEnforceIf}\PYG{p}{(}\PYG{n}{performedAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{k}\PYG{p}{][}\PYG{n}{i}\PYG{p}{]);}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{k}{break}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{...}
+\end{Verbatim}

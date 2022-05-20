@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2022.4.8)  18 MAY 2022 01:11
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2022.4.8)  20 MAY 2022 21:44
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1727,42 +1727,99 @@ File: images//instruments.png Graphic file (type bmp)
 File: images//schema.png Graphic file (type bmp)
 <images//schema.png>
  [29] [30]
+File: images//interface.png Graphic file (type bmp)
+<images//interface.png>
+ [31]
+File: images//syncgantt.png Graphic file (type bmp)
+<images//syncgantt.png>
+File: images//eammain.png Graphic file (type bmp)
+<images//eammain.png>
+ [32]
+File: images//homepage.png Graphic file (type bmp)
+<images//homepage.png>
+File: images//jobtypes.png Graphic file (type bmp)
+<images//jobtypes.png>
+ [33]
+File: images//staff.png Graphic file (type bmp)
+<images//staff.png>
+ [34]
+File: images//blazstruct.png Graphic file (type bmp)
+<images//blazstruct.png>
+ [35]
 \openout4 = `main.pyg'.
 
 
 (_minted-main/E2199177E83E4222BF8577258F1356865018845A16FEE2F871CFA2D2B2CFB1C6.
-pygtex [31])
-Underfull \hbox (badness 1033) in paragraph at lines 80--81
+pygtex) [36]
+Underfull \hbox (badness 1033) in paragraph at lines 120--121
 []\TU/TimesNewRoman(2)/m/n/14.4 Получаем некий объект, в котором уже для просте
 йшего примера
  []
 
 
-Underfull \hbox (badness 1348) in paragraph at lines 82--83
+Underfull \hbox (badness 1348) in paragraph at lines 122--123
 []\TU/TimesNewRoman(2)/m/n/14.4 Необходимость в наличии инициализации относител
 ьно горизонта
  []
 
-[32]
 \openout4 = `main.pyg'.
 
 
 (_minted-main/DBF10B256392F7767C75E5174069D7386A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex [33])
+pygtex [37])
 \openout4 = `main.pyg'.
 
 
 (_minted-main/6DFBB576432E859CF2E5AE539515F9066A8AE5FAD709ACE6B4074555FF19DB7D.
+pygtex [38])
+\openout4 = `main.pyg'.
+
+
+(_minted-main/3D0BB734EBD7C2C79454304A513ECE856A8AE5FAD709ACE6B4074555FF19DB7D.
+pygtex [39] [40])
+\openout4 = `main.pyg'.
+
+
+(_minted-main/35DA53078F0827C9F8C5345FAB9E31FE6A8AE5FAD709ACE6B4074555FF19DB7D.
+pygtex)
+\openout5 = `main.pyg'.
+
+
+(_minted-main/D463E78B8E592669889AE920A5A8349E6A8AE5FAD709ACE6B4074555FF19DB7D.
+pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
+[]\TU/TimesNewRoman(2)/m/n/14.4 Необходимое ограничение задается в строке
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
+\TU/ArialFamily/m/n/14.4 model.Add(LinearExpr.Sum(performedAt_by_type[i])[] []<
+=[]
+ []
+
+
+Underfull \hbox (badness 6510) in paragraph at lines 239--240
+\TU/TimesNewRoman(2)/m/n/14.4 ограничение. Метод LinearExpr.Sum(), переданный в
+ Add() позволяет
+ []
+
+[41] [42]
+\openout4 = `main.pyg'.
+
+
+(_minted-main/FB3EF3698F8AFBF07FA62DE13B7B69FC6A8AE5FAD709ACE6B4074555FF19DB7D.
 pygtex)
 \openout4 = `main.pyg'.
 
-runsystem(pygmentize -l csharp -f latex -P commandprefix=PYG -F tokenmerge -P s
-tripnl=False -o _minted-main/A133E531A167216BB9D4F0057577405D6A8AE5FAD709ACE6B4
-074555FF19DB7D.pygtex main.pyg)...executed.
 
+(_minted-main/16D0B91C63E38ACA9EF65CFB14864D2A6A8AE5FAD709ACE6B4074555FF19DB7D.
+pygtex [43])
+Underfull \hbox (badness 1184) in paragraph at lines 284--285
+[]\TU/TimesNewRoman(2)/m/n/14.4 В данном примере целевая функция задается через
+ метод модели
+ []
 
-(_minted-main/A133E531A167216BB9D4F0057577405D6A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex [34] [35]) [36]) (inc/0-bibliography.tex
+[44]) (inc/0-bibliography.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\uppercase' on input line 3.
@@ -1809,7 +1866,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--63
 с], URL:
  []
 
-[37
+[45
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 71--75
@@ -1853,7 +1910,7 @@ Underfull \hbox (badness 1701) in paragraph at lines 116--120
 ams. [Электрон-
  []
 
-[38])
+[46])
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -1900,17 +1957,17 @@ The property list \__xpg_alias contains the pairs (without outer braces):
 >  {ru-petr1708/options}  =>  {spelling=old}.
  (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B147FEAFD72A5858FA8D8EB9D6D07CEB;12345.
+(rerunfilecheck)             Checksum: B813DB296239F6F376B89E49759315F6;12345.
 runsystem(del main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 37192 strings out of 410967
- 731661 string characters out of 2829844
- 1094235 words of memory out of 3000000
- 57271 multiletter control sequences out of 15000+600000
- 475189 words of font info for 107 fonts, out of 8000000 for 9000
+ 37346 strings out of 410967
+ 736211 string characters out of 2829844
+ 1095055 words of memory out of 3000000
+ 57414 multiletter control sequences out of 15000+600000
+ 475181 words of font info for 106 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  119i,15n,120p,1612b,864s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on main.pdf (36 pages).
+Output written on main.pdf (44 pages).
