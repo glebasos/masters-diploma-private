@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2022.4.8)  20 MAY 2022 21:44
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2022.4.8)  23 MAY 2022 00:52
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1553,131 +1553,47 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 30.
- [8]
-Underfull \hbox (badness 3333) in paragraph at lines 58--59
+ine 23.
+
+Underfull \hbox (badness 3333) in paragraph at lines 44--45
 []\TU/TimesNewRoman(2)/m/n/14.4 В результате работы планируется получить готово
 е программно-
  []
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 58--59
+Underfull \hbox (badness 1231) in paragraph at lines 44--45
 \TU/TimesNewRoman(2)/m/n/14.4 техническое решение, которое может взаимодействов
 ать с имеющимися
  []
 
-[9]) (inc/zz0-obzoroblasti.tex [10
+[8] [9]) (inc/zz0-obzoroblasti.tex [10
 
-] [11] [12] [13] [14]
-Overfull \hbox (13.5461pt too wide) in paragraph at lines 77--78
-[]\TU/TimesNewRoman(2)/m/n/14.4 В статье https://journals.lib.unb.ca/index.php/
-AOR/article/view/18595/20992
- []
-
-
-Underfull \hbox (badness 2762) in paragraph at lines 77--78
-\TU/TimesNewRoman(2)/m/n/14.4 представлены уже результаты сравнения коммерчески
-х IBM CPLEX и
- []
-
-[15]
-Underfull \hbox (badness 1077) in paragraph at lines 92--92
+] [11] [12] [13] [14] [15] [16]
+Underfull \hbox (badness 1077) in paragraph at lines 102--102
 | \TU/TimesNewRoman(2)/b/n/14.4 1.4 Уточненная постановка задачи и требования к
  прототипу
  []
 
-[16] [17] [18]) (inc/zz1-proektirovanie.tex
+[17] [18] [19]) (inc/zz1-proektirovanie.tex
 Underfull \hbox (badness 1199) in paragraph at lines 12--12
 \TU/TimesNewRoman(2)/b/n/14.4 включая разработку структуры (компоненты и связи 
 между ними),
  []
 
+[20
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
-[]\TU/TimesNewRoman(2)/m/n/14.4 На данный момент платформа .Net Framework являе
-тся
+] [21]
+Underfull \hbox (badness 1067) in paragraph at lines 40--41
+\TU/TimesNewRoman(2)/m/n/14.4 СУБД ЛИНТЕР-ВС на базе PostgreSQL используется в 
+ОС МСВС, а в
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
-\TU/TimesNewRoman(2)/m/n/14.4 поддерживаемой, но устаревшей, и по рекомендациям
- Microsoft
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
-\TU/TimesNewRoman(2)/m/n/14.4 111https://docs.microsoft.com/en-us/dotnet/standa
-rd/choosing-core-framework-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
-\TU/TimesNewRoman(2)/m/n/14.4 server111 не следует начинать новые проекты на эт
-ой платформе.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
-\TU/TimesNewRoman(2)/m/n/14.4 Дополнительно необходимо указать, что платформа .
-Net Framework
- []
-
-
-Underfull \hbox (badness 5548) in paragraph at lines 18--19
-\TU/TimesNewRoman(2)/m/n/14.4 не является кроссплатформенной и работает только 
-в операционных
- []
-
-[19
-
-] [20]
-Underfull \hbox (badness 4048) in paragraph at lines 40--41
-[]\TU/TimesNewRoman(2)/m/n/14.4 В данный момент ввиду острой необходимости в им
-портозаме-
- []
-
-
-Underfull \hbox (badness 1478) in paragraph at lines 40--41
-\TU/TimesNewRoman(2)/m/n/14.4 щении и независимости от зарубежных ПО, сервисов 
-и средств имен-
- []
-
-
-Underfull \hbox (badness 3333) in paragraph at lines 40--41
-\TU/TimesNewRoman(2)/m/n/14.4 но СУБД PostgreSQL видится лучшим вариантом. У ро
-ссийских раз-
- []
-
-
-Underfull \hbox (badness 6625) in paragraph at lines 40--41
-\TU/TimesNewRoman(2)/m/n/14.4 работчиков уже есть большой опыт в развитии своих
- доработок и
- []
-
-
-Underfull \hbox (badness 6995) in paragraph at lines 40--41
-\TU/TimesNewRoman(2)/m/n/14.4 ответвлений PostgreSQL. Так, например, давно и ус
-пешно применя-
- []
-
-
-Underfull \hbox (badness 3919) in paragraph at lines 40--41
-\TU/TimesNewRoman(2)/m/n/14.4 ется ответвление Postgres Pro []ССЫЛКА[], СУБД ЛИ
-НТЕР-ВС на базе
- []
-
-
-Underfull \hbox (badness 1931) in paragraph at lines 40--41
-\TU/TimesNewRoman(2)/m/n/14.4 PostgreSQL используется в ОС МСВС, а в дистрибути
-в операционной
- []
-
-[21]
+[22]
 File: images//arch.png Graphic file (type bmp)
 <images//arch.png>
 File: images//archsp.png Graphic file (type bmp)
 <images//archsp.png>
- [22] [23]
+ [23] [24]
 \openout5 = `main.pyg'.
 
  (_minted-main/autumn.pygstyle)
@@ -1687,7 +1603,7 @@ pygtex)
 
 
 (_minted-main/0B7256FB3C71686A345001BDEEBD03936A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex) [24]
+pygtex) [25]
 Underfull \hbox (badness 2790) in paragraph at lines 92--93
 []\TU/TimesNewRoman(2)/m/n/14.4 Это также переменная, поскольку она может задав
 аться в опре-
@@ -1708,209 +1624,241 @@ pygtex)
 
 
 (_minted-main/855FC97EA25A9DF28CD01FDDA85847F76A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex) [25] [26]
+pygtex) [26] [27]
 Overfull \hbox (36.13512pt too wide) in paragraph at lines 143--152
 []$[]$ 
  []
 
 
-Overfull \hbox (36.13512pt too wide) in paragraph at lines 155--164
+Overfull \hbox (36.13512pt too wide) in paragraph at lines 156--165
 []$[]$ 
  []
 
-[27]) (inc/zz2-realizaciya.tex
+[28]) (inc/zz2-realizaciya.tex
 File: images//instruments.png Graphic file (type bmp)
 <images//instruments.png>
- [28
+ [29
 
 ]
 File: images//schema.png Graphic file (type bmp)
 <images//schema.png>
- [29] [30]
+ [30] [31]
 File: images//interface.png Graphic file (type bmp)
 <images//interface.png>
- [31]
+ [32]
 File: images//syncgantt.png Graphic file (type bmp)
 <images//syncgantt.png>
 File: images//eammain.png Graphic file (type bmp)
 <images//eammain.png>
- [32]
+ [33]
 File: images//homepage.png Graphic file (type bmp)
 <images//homepage.png>
 File: images//jobtypes.png Graphic file (type bmp)
 <images//jobtypes.png>
- [33]
+ [34]
 File: images//staff.png Graphic file (type bmp)
 <images//staff.png>
- [34]
+ [35]
 File: images//blazstruct.png Graphic file (type bmp)
 <images//blazstruct.png>
- [35]
+ [36]
 \openout4 = `main.pyg'.
 
 
 (_minted-main/E2199177E83E4222BF8577258F1356865018845A16FEE2F871CFA2D2B2CFB1C6.
-pygtex) [36]
-Underfull \hbox (badness 1033) in paragraph at lines 120--121
+pygtex [37])
+Underfull \hbox (badness 1033) in paragraph at lines 121--122
 []\TU/TimesNewRoman(2)/m/n/14.4 Получаем некий объект, в котором уже для просте
 йшего примера
  []
 
 
-Underfull \hbox (badness 1348) in paragraph at lines 122--123
+Underfull \hbox (badness 1348) in paragraph at lines 123--124
 []\TU/TimesNewRoman(2)/m/n/14.4 Необходимость в наличии инициализации относител
 ьно горизонта
  []
 
+[38]
 \openout4 = `main.pyg'.
 
 
 (_minted-main/DBF10B256392F7767C75E5174069D7386A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex [37])
+pygtex [39])
 \openout4 = `main.pyg'.
 
 
 (_minted-main/6DFBB576432E859CF2E5AE539515F9066A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex [38])
+pygtex)
 \openout4 = `main.pyg'.
 
 
 (_minted-main/3D0BB734EBD7C2C79454304A513ECE856A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex [39] [40])
+pygtex [40] [41])
 \openout4 = `main.pyg'.
 
 
 (_minted-main/35DA53078F0827C9F8C5345FAB9E31FE6A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex)
+pygtex [42])
 \openout5 = `main.pyg'.
 
 
 (_minted-main/D463E78B8E592669889AE920A5A8349E6A8AE5FAD709ACE6B4074555FF19DB7D.
 pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 []\TU/TimesNewRoman(2)/m/n/14.4 Необходимое ограничение задается в строке
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 \TU/ArialFamily/m/n/14.4 model.Add(LinearExpr.Sum(performedAt_by_type[i])[] []<
 =[]
  []
 
 
-Underfull \hbox (badness 6510) in paragraph at lines 239--240
+Underfull \hbox (badness 6510) in paragraph at lines 240--241
 \TU/TimesNewRoman(2)/m/n/14.4 ограничение. Метод LinearExpr.Sum(), переданный в
  Add() позволяет
  []
 
-[41] [42]
+[43]
 \openout4 = `main.pyg'.
 
 
 (_minted-main/FB3EF3698F8AFBF07FA62DE13B7B69FC6A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex)
+pygtex [44])
 \openout4 = `main.pyg'.
 
 
 (_minted-main/16D0B91C63E38ACA9EF65CFB14864D2A6A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex [43])
-Underfull \hbox (badness 1184) in paragraph at lines 284--285
+pygtex)
+Underfull \hbox (badness 1184) in paragraph at lines 285--286
 []\TU/TimesNewRoman(2)/m/n/14.4 В данном примере целевая функция задается через
  метод модели
  []
 
-[44]) (inc/0-bibliography.tex
+[45]
+File: images//1vs2time.png Graphic file (type bmp)
+<images//1vs2time.png>
+File: images//1vs2ram.png Graphic file (type bmp)
+<images//1vs2ram.png>
+ [46] [47]) (inc/0-conclusion.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\uppercase' on input line 1.
+
+[48
+
+]) (inc/0-bibliography.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\uppercase' on input line 3.
 
 
-Underfull \hbox (badness 8094) in paragraph at lines 5--9
-[]\TU/TimesNewRoman(2)/m/n/14.4 Видеозапись Blender used at VFX studio, [Электр
+Underfull \hbox (badness 10000) in paragraph at lines 5--9
+[]\TU/TimesNewRoman(2)/m/n/14.4 Видеозапись Intel Fab Tour, [Электронный ресурс
+], URL:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--9
+\TU/TimesNewRoman(2)/m/n/14.4 https://www.youtube.com/watch?v=2ehSCWoaOqQ (дата
+ обращения
+ []
+
+
+Underfull \hbox (badness 5008) in paragraph at lines 11--16
+[]\TU/TimesNewRoman(2)/m/n/14.4 Virginia Dignum, Frank Dignum, ”Agents are Dead
+. Long live
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--39
+[]\TU/TimesNewRoman(2)/m/n/14.4 Сайт фреймворк GLPK [Электронный ресурс], URL:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--45
+[]\TU/TimesNewRoman(2)/m/n/14.4 Сайт LP_Solve [Электронный ресурс], URL:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--57
+[]\TU/TimesNewRoman(2)/m/n/14.4 Сайт OR-Tools [Электронный ресурс], URL:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--69
+[]\TU/TimesNewRoman(2)/m/n/14.4 Сайт IBM CPLEX [Электронный ресурс], URL:
+ []
+
+[49
+
+]
+Underfull \hbox (badness 6188) in paragraph at lines 83--86
+[]\TU/TimesNewRoman(2)/m/n/14.4 Hvattum, Lars Magnus & Løkketangen, Arne & Glov
+er, Fred,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--86
+\TU/TimesNewRoman(2)/m/n/14.4 Comparisons of Commercial MIP Solvers and an Adap
+tive Memory
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--92
+[]\TU/TimesNewRoman(2)/m/n/14.4 Сайт Minizinc challenge [Электронный ресурс], U
+RL:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--98
+[]\TU/TimesNewRoman(2)/m/n/14.4 Википедия - Диета Стиглера [Электронный ресурс]
+, URL:
+ []
+
+
+Underfull \hbox (badness 5578) in paragraph at lines 100--104
+[]\TU/TimesNewRoman(2)/m/n/14.4 .NET vs. .NET Framework for server apps [Электр
 онный ре-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--21
-[]\TU/TimesNewRoman(2)/m/n/14.4 Сайт программного обеспечения захвата движений 
-FaceCap
+Underfull \hbox (badness 7151) in paragraph at lines 100--104
+\TU/TimesNewRoman(2)/m/n/14.4 сурс], URL: https://docs.microsoft.com/en-us/dotn
+et/standard/choosing-core-
  []
 
 
-Underfull \hbox (badness 5847) in paragraph at lines 35--39
-[]\TU/TimesNewRoman(2)/m/n/14.4 Сайт Blender 2.8 API reference [Электронный рес
-урс], URL:
+Underfull \hbox (badness 10000) in paragraph at lines 106--110
+[]\TU/TimesNewRoman(2)/m/n/14.4 Сайт Postgres PRO [Электронный ресурс],
  []
 
 
-Underfull \hbox (badness 1117) in paragraph at lines 41--45
-[]\TU/TimesNewRoman(2)/m/n/14.4 Сайт библиотеки компьютерного зрения OpenCV [Эл
-ектронный
+Underfull \hbox (badness 10000) in paragraph at lines 112--116
+[]\TU/TimesNewRoman(2)/m/n/14.4 Реестр - СУБД Postgres PRO [Электронный ресурс]
+,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--57
-[]\TU/TimesNewRoman(2)/m/n/14.4 Using the Facemark API [Электронный ресурс], UR
-L:
+Underfull \hbox (badness 10000) in paragraph at lines 112--116
+\TU/TimesNewRoman(2)/m/n/14.4 https://reestr.digital.gov.ru/reestr/301574/?sphr
+ase_id=1426840 (дата
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--57
-\TU/TimesNewRoman(2)/m/n/14.4 https://docs.opencv.org/master/d7/dec/tutorial_fa
-cemark_usage.html (дата
+Underfull \hbox (badness 10000) in paragraph at lines 118--122
+[]\TU/TimesNewRoman(2)/m/n/14.4 https://www.syncfusion.com/blazor-components [Э
+лектронный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--63
-[]\TU/TimesNewRoman(2)/m/n/14.4 DLib Face landmark detection [Электронный ресур
-с], URL:
+Underfull \hbox (badness 1895) in paragraph at lines 118--122
+\TU/TimesNewRoman(2)/m/n/14.4 ресурс], https://reestr.digital.gov.ru/reestr/301
+574/?sphrase_id=1426840 (дата
  []
 
-[45
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 71--75
-\TU/TimesNewRoman(2)/m/n/14.4 https://ru.wikipedia.org/wiki/Алгоритм_Левенберга
-_—_Марквардта (дата
- []
-
-
-Underfull \hbox (badness 1389) in paragraph at lines 77--82
-\TU/TimesNewRoman(2)/m/n/14.4 Computer Vision and Active Perception Lab Teknikr
-ingen 14, Stockholm,
- []
-
-
-Underfull \hbox (badness 6625) in paragraph at lines 85--89
-[]\TU/TimesNewRoman(2)/m/n/14.4 Датасет Facial point annotations [Электронный р
-есурс], URL:
- []
-
-
-Underfull \hbox (badness 6047) in paragraph at lines 85--89
-\TU/TimesNewRoman(2)/m/n/14.4 https://ibug.doc.ic.ac.uk/resources/facial-point-
-annotations/ (дата обращения
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 98--102
-[]\TU/TimesNewRoman(2)/m/n/14.4 Страница библиотеки opencv-contrib-python на са
-йте
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 98--102
-\TU/TimesNewRoman(2)/m/n/14.4 базы модулей языка Python PyPi [Электронный ресур
-с], URL:
- []
-
-
-Underfull \hbox (badness 1701) in paragraph at lines 116--120
-[]\TU/TimesNewRoman(2)/m/n/14.4 Сайт Trained model files for dlib example progr
-ams. [Электрон-
- []
-
-[46])
+[50])
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -1957,17 +1905,17 @@ The property list \__xpg_alias contains the pairs (without outer braces):
 >  {ru-petr1708/options}  =>  {spelling=old}.
  (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B813DB296239F6F376B89E49759315F6;12345.
+(rerunfilecheck)             Checksum: E03ACEB37609105ED9382B79DAC4D9A5;12070.
 runsystem(del main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 37346 strings out of 410967
- 736211 string characters out of 2829844
- 1095055 words of memory out of 3000000
- 57414 multiletter control sequences out of 15000+600000
+ 37392 strings out of 410967
+ 737079 string characters out of 2829844
+ 1095039 words of memory out of 3000000
+ 57457 multiletter control sequences out of 15000+600000
  475181 words of font info for 106 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  119i,15n,120p,1612b,864s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on main.pdf (44 pages).
+Output written on main.pdf (48 pages).
