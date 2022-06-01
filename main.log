@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2022.4.8)  23 MAY 2022 00:52
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2022.4.8)  1 JUN 2022 15:54
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1667,13 +1667,13 @@ File: images//blazstruct.png Graphic file (type bmp)
 
 (_minted-main/E2199177E83E4222BF8577258F1356865018845A16FEE2F871CFA2D2B2CFB1C6.
 pygtex [37])
-Underfull \hbox (badness 1033) in paragraph at lines 121--122
+Underfull \hbox (badness 1033) in paragraph at lines 123--124
 []\TU/TimesNewRoman(2)/m/n/14.4 Получаем некий объект, в котором уже для просте
 йшего примера
  []
 
 
-Underfull \hbox (badness 1348) in paragraph at lines 123--124
+Underfull \hbox (badness 1348) in paragraph at lines 125--126
 []\TU/TimesNewRoman(2)/m/n/14.4 Необходимость в наличии инициализации относител
 ьно горизонта
  []
@@ -1688,34 +1688,34 @@ pygtex [39])
 
 
 (_minted-main/6DFBB576432E859CF2E5AE539515F9066A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex)
+pygtex) [40]
 \openout4 = `main.pyg'.
 
 
-(_minted-main/3D0BB734EBD7C2C79454304A513ECE856A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex [40] [41])
+(_minted-main/719546EC5D3595F21C67A47FD5DEFF556A8AE5FAD709ACE6B4074555FF19DB7D.
+pygtex [41])
 \openout4 = `main.pyg'.
 
 
-(_minted-main/35DA53078F0827C9F8C5345FAB9E31FE6A8AE5FAD709ACE6B4074555FF19DB7D.
+(_minted-main/07A135DBE3897D4B39452FCAB4F2ED1C6A8AE5FAD709ACE6B4074555FF19DB7D.
 pygtex [42])
 \openout5 = `main.pyg'.
 
 
 (_minted-main/D463E78B8E592669889AE920A5A8349E6A8AE5FAD709ACE6B4074555FF19DB7D.
 pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
 []\TU/TimesNewRoman(2)/m/n/14.4 Необходимое ограничение задается в строке
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
 \TU/ArialFamily/m/n/14.4 model.Add(LinearExpr.Sum(performedAt_by_type[i])[] []<
 =[]
  []
 
 
-Underfull \hbox (badness 6510) in paragraph at lines 240--241
+Underfull \hbox (badness 6510) in paragraph at lines 242--243
 \TU/TimesNewRoman(2)/m/n/14.4 ограничение. Метод LinearExpr.Sum(), переданный в
  Add() позволяет
  []
@@ -1731,7 +1731,7 @@ pygtex [44])
 
 (_minted-main/16D0B91C63E38ACA9EF65CFB14864D2A6A8AE5FAD709ACE6B4074555FF19DB7D.
 pygtex)
-Underfull \hbox (badness 1184) in paragraph at lines 285--286
+Underfull \hbox (badness 1184) in paragraph at lines 287--288
 []\TU/TimesNewRoman(2)/m/n/14.4 В данном примере целевая функция задается через
  метод модели
  []
@@ -1741,12 +1741,28 @@ File: images//1vs2time.png Graphic file (type bmp)
 <images//1vs2time.png>
 File: images//1vs2ram.png Graphic file (type bmp)
 <images//1vs2ram.png>
- [46] [47]) (inc/0-conclusion.tex
+ [46] [47]
+File: images//borderinit.png Graphic file (type bmp)
+<images//borderinit.png>
+ [48]
+File: images//borderafter.png Graphic file (type bmp)
+<images//borderafter.png>
+File: images//bordeream.png Graphic file (type bmp)
+<images//bordeream.png>
+ [49]
+Underfull \hbox (badness 1163) in paragraph at lines 345--346
+[]\TU/TimesNewRoman(2)/m/n/14.4 По результатам тестирования в данных условиях п
+ерепланировать
+ []
+
+File: images//procusage.png Graphic file (type bmp)
+<images//procusage.png>
+[50] [51]) (inc/0-conclusion.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\uppercase' on input line 1.
 
-[48
+[52
 
 ]) (inc/0-bibliography.tex
 
@@ -1791,7 +1807,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--69
 []\TU/TimesNewRoman(2)/m/n/14.4 Сайт IBM CPLEX [Электронный ресурс], URL:
  []
 
-[49
+[53
 
 ]
 Underfull \hbox (badness 6188) in paragraph at lines 83--86
@@ -1858,7 +1874,7 @@ Underfull \hbox (badness 1895) in paragraph at lines 118--122
 574/?sphrase_id=1426840 (дата
  []
 
-[50])
+[54])
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -1905,17 +1921,17 @@ The property list \__xpg_alias contains the pairs (without outer braces):
 >  {ru-petr1708/options}  =>  {spelling=old}.
  (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E03ACEB37609105ED9382B79DAC4D9A5;12070.
+(rerunfilecheck)             Checksum: B9E5F715616D23B617A5B5EB867EEC3D;12718.
 runsystem(del main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 37392 strings out of 410967
- 737079 string characters out of 2829844
- 1095039 words of memory out of 3000000
- 57457 multiletter control sequences out of 15000+600000
+ 37469 strings out of 410967
+ 738752 string characters out of 2829844
+ 1096106 words of memory out of 3000000
+ 57534 multiletter control sequences out of 15000+600000
  475181 words of font info for 106 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  119i,15n,120p,1612b,864s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on main.pdf (48 pages).
+Output written on main.pdf (52 pages).
