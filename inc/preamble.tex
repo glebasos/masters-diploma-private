@@ -186,6 +186,12 @@
 \titleformat{\paragraph}[block]{\bfseries\normalsize}{}{12.5mm}{\MakeTextUppercase{#1}}
 
 % Секции без номеров (введение, заключение...), вместо section*{}
+\newcommand{\annotsection}[1]{
+    \phantomsection % Корректный переход по ссылкам в содержании
+    \paragraph{\centerline{{#1}}\vspace{1.5em}}
+}
+
+% Секции без номеров (введение, заключение...), вместо section*{}
 \newcommand{\anonsection}[1]{
     \phantomsection % Корректный переход по ссылкам в содержании
     \paragraph{\centerline{{#1}}\vspace{1.5em}}

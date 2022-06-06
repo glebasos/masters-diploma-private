@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2022.4.8)  6 JUN 2022 19:39
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2022.4.8)  6 JUN 2022 21:50
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1522,78 +1522,115 @@ LaTeX Info: Redefining \nameref on input line 8.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-(main.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+(inc/annotru.tex
+Underfull \hbox (badness 2726) in paragraph at lines 15--16
+\TU/TimesNewRoman(2)/m/n/14.4 тического моделирования в области исследования оп
+ераций, объектно-
+ []
+
+[3
+
+] [4]) (inc/annoten.tex
+Underfull \hbox (badness 2828) in paragraph at lines 5--6
+[]\TU/TimesNewRoman(2)/m/n/14.4 Keywords: operations research, combinatorial op
+timization, constraint
+ []
+
+
+Underfull \hbox (badness 3954) in paragraph at lines 16--17
+\TU/TimesNewRoman(2)/m/n/14.4 modeling in the areas of operations research, obj
+ect-oriented design and
+ []
+
+
+Underfull \hbox (badness 3815) in paragraph at lines 22--23
+[]\TU/TimesNewRoman(2)/m/n/14.4 a prototype of the resource planning system bas
+ed on the created
+ []
+
+
+Underfull \hbox (badness 8075) in paragraph at lines 28--29
+[]\TU/TimesNewRoman(2)/m/n/14.4 Basic system requirements for the hardware conf
+iguration of the
+ []
+
+[5
+
+]
+Underfull \hbox (badness 4193) in paragraph at lines 38--39
+[]\TU/TimesNewRoman(2)/m/n/14.4 Supported operations: selecting the planning ho
+rizon, launching the
+ []
+
+[6]) (main.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
  (D:\Soft\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
 
 (D:\Soft\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [3
+) [7
 
 ])
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
- [4] (inc/perec.tex
+ [8] (inc/perec.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\uppercase' on input line 1.
 
-[5
+[9
 
-] [6]) (inc/0-intro.tex
+] [10]) (inc/0-intro.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\uppercase' on input line 1.
 
-[7
+[11
 
 ]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 23.
-
-Underfull \hbox (badness 3333) in paragraph at lines 44--45
+Underfull \hbox (badness 3333) in paragraph at lines 43--44
 []\TU/TimesNewRoman(2)/m/n/14.4 В результате работы планируется получить готово
 е программно-
  []
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 44--45
+Underfull \hbox (badness 1231) in paragraph at lines 43--44
 \TU/TimesNewRoman(2)/m/n/14.4 техническое решение, которое может взаимодействов
 ать с имеющимися
  []
 
-[8] [9]) (inc/zz0-obzoroblasti.tex [10
+[12] [13]) (inc/zz0-obzoroblasti.tex [14
 
-] [11] [12] [13] [14] [15] [16]
-Underfull \hbox (badness 1077) in paragraph at lines 101--101
+] [15] [16] [17] [18] [19] [20]
+Underfull \hbox (badness 1077) in paragraph at lines 97--97
 | \TU/TimesNewRoman(2)/b/n/14.4 1.4 Уточненная постановка задачи и требования к
  прототипу
  []
 
-[17] [18] [19]) (inc/zz1-proektirovanie.tex
+[21] [22] [23]) (inc/zz1-proektirovanie.tex
 Underfull \hbox (badness 1199) in paragraph at lines 12--12
 \TU/TimesNewRoman(2)/b/n/14.4 включая разработку структуры (компоненты и связи 
 между ними),
  []
 
-[20
+[24
 
-] [21]
+] [25]
 Underfull \hbox (badness 1067) in paragraph at lines 40--41
 \TU/TimesNewRoman(2)/m/n/14.4 СУБД ЛИНТЕР-ВС на базе PostgreSQL используется в 
 ОС МСВС, а в
  []
 
-[22]
+[26]
 File: images//arch.png Graphic file (type bmp)
 <images//arch.png>
 File: images//archsp.png Graphic file (type bmp)
 <images//archsp.png>
- [23] [24]
+ [27] [28]
 \openout5 = `main.pyg'.
 
  (_minted-main/autumn.pygstyle)
@@ -1603,7 +1640,7 @@ pygtex)
 
 
 (_minted-main/0B7256FB3C71686A345001BDEEBD03936A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex) [25]
+pygtex) [29]
 Underfull \hbox (badness 2790) in paragraph at lines 92--93
 []\TU/TimesNewRoman(2)/m/n/14.4 Это также переменная, поскольку она может задав
 аться в опре-
@@ -1624,7 +1661,7 @@ pygtex)
 
 
 (_minted-main/855FC97EA25A9DF28CD01FDDA85847F76A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex) [26] [27]
+pygtex) [30] [31]
 Overfull \hbox (36.13512pt too wide) in paragraph at lines 143--152
 []$[]$ 
  []
@@ -1634,39 +1671,39 @@ Overfull \hbox (36.13512pt too wide) in paragraph at lines 156--165
 []$[]$ 
  []
 
-[28]) (inc/zz2-realizaciya.tex
+[32]) (inc/zz2-realizaciya.tex
 File: images//instruments.png Graphic file (type bmp)
 <images//instruments.png>
- [29
+ [33
 
 ]
 File: images//schema.png Graphic file (type bmp)
 <images//schema.png>
- [30] [31]
+ [34] [35]
 File: images//interface.png Graphic file (type bmp)
 <images//interface.png>
- [32]
+ [36]
 File: images//syncgantt.png Graphic file (type bmp)
 <images//syncgantt.png>
 File: images//eammain.png Graphic file (type bmp)
 <images//eammain.png>
- [33]
+ [37]
 File: images//homepage.png Graphic file (type bmp)
 <images//homepage.png>
 File: images//jobtypes.png Graphic file (type bmp)
 <images//jobtypes.png>
- [34]
+ [38]
 File: images//staff.png Graphic file (type bmp)
 <images//staff.png>
- [35]
+ [39]
 File: images//blazstruct.png Graphic file (type bmp)
 <images//blazstruct.png>
- [36]
+ [40]
 \openout4 = `main.pyg'.
 
 
 (_minted-main/E2199177E83E4222BF8577258F1356865018845A16FEE2F871CFA2D2B2CFB1C6.
-pygtex [37])
+pygtex [41])
 Underfull \hbox (badness 1033) in paragraph at lines 123--124
 []\TU/TimesNewRoman(2)/m/n/14.4 Получаем некий объект, в котором уже для просте
 йшего примера
@@ -1678,27 +1715,27 @@ Underfull \hbox (badness 1348) in paragraph at lines 125--126
 ьно горизонта
  []
 
-[38]
+[42]
 \openout4 = `main.pyg'.
 
 
 (_minted-main/DBF10B256392F7767C75E5174069D7386A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex [39])
+pygtex [43])
 \openout4 = `main.pyg'.
 
 
 (_minted-main/6DFBB576432E859CF2E5AE539515F9066A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex) [40]
+pygtex) [44]
 \openout4 = `main.pyg'.
 
 
 (_minted-main/719546EC5D3595F21C67A47FD5DEFF556A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex [41])
+pygtex [45])
 \openout4 = `main.pyg'.
 
 
 (_minted-main/07A135DBE3897D4B39452FCAB4F2ED1C6A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex [42])
+pygtex [46])
 \openout5 = `main.pyg'.
 
 
@@ -1720,12 +1757,12 @@ Underfull \hbox (badness 6510) in paragraph at lines 242--243
  Add() позволяет
  []
 
-[43]
+[47]
 \openout4 = `main.pyg'.
 
 
 (_minted-main/FB3EF3698F8AFBF07FA62DE13B7B69FC6A8AE5FAD709ACE6B4074555FF19DB7D.
-pygtex [44])
+pygtex [48])
 \openout4 = `main.pyg'.
 
 
@@ -1736,20 +1773,20 @@ Underfull \hbox (badness 1184) in paragraph at lines 287--288
  метод модели
  []
 
-[45]
+[49]
 File: images//1vs2time.png Graphic file (type bmp)
 <images//1vs2time.png>
 File: images//1vs2ram.png Graphic file (type bmp)
 <images//1vs2ram.png>
- [46] [47]
+ [50] [51]
 File: images//borderinit.png Graphic file (type bmp)
 <images//borderinit.png>
- [48]
+ [52]
 File: images//borderafter.png Graphic file (type bmp)
 <images//borderafter.png>
 File: images//bordeream.png Graphic file (type bmp)
 <images//bordeream.png>
- [49]
+ [53]
 Underfull \hbox (badness 1163) in paragraph at lines 345--346
 []\TU/TimesNewRoman(2)/m/n/14.4 По результатам тестирования в данных условиях п
 ерепланировать
@@ -1757,12 +1794,12 @@ Underfull \hbox (badness 1163) in paragraph at lines 345--346
 
 File: images//procusage.png Graphic file (type bmp)
 <images//procusage.png>
-[50]
+[54]
 File: images//100jtime.png Graphic file (type bmp)
 <images//100jtime.png>
 File: images//1000jtime.png Graphic file (type bmp)
 <images//1000jtime.png>
- [51] [52]
+ [55] [56]
 File: images//365d2k.png Graphic file (type bmp)
 <images//365d2k.png>
 
@@ -1771,12 +1808,12 @@ Underfull \hbox (badness 1215) in paragraph at lines 377--378
  год находится в
  []
 
-[53]
+[57]
 File: images//plotn10.png Graphic file (type bmp)
 <images//plotn10.png>
 File: images//20jtsmall.png Graphic file (type bmp)
 <images//20jtsmall.png>
- [54]
+ [58]
 File: images//20jtbig.png Graphic file (type bmp)
 <images//20jtbig.png>
 
@@ -1791,18 +1828,18 @@ Underfull \hbox (badness 1189) in paragraph at lines 393--394
 форму, а средняя
  []
 
-[55]
+[59]
 File: images//plotn20.png Graphic file (type bmp)
 <images//plotn20.png>
 File: images//work20.png Graphic file (type bmp)
 <images//work20.png>
- [56] [57]
+ [60] [61]
 Underfull \hbox (badness 1173) in paragraph at lines 422--423
 \TU/TimesNewRoman(2)/m/n/14.4 стандартной практикой в области операционных иссл
 едований, поэтому
  []
 
-[58]) (inc/0-conclusion.tex
+[62]) (inc/0-conclusion.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\uppercase' on input line 1.
@@ -1813,9 +1850,9 @@ Underfull \hbox (badness 1077) in paragraph at lines 13--14
 комбинаторной
  []
 
-[59
+[63
 
-] [60]) (inc/0-bibliography.tex
+] [64]) (inc/0-bibliography.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\uppercase' on input line 3.
@@ -1858,7 +1895,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--69
 []\TU/TimesNewRoman(2)/m/n/14.4 Сайт IBM CPLEX [Электронный ресурс], URL:
  []
 
-[61
+[65
 
 ]
 Underfull \hbox (badness 6188) in paragraph at lines 83--86
@@ -1925,20 +1962,16 @@ Underfull \hbox (badness 1895) in paragraph at lines 118--122
 574/?sphrase_id=1426840 (дата
  []
 
-[62]) (inc/a-app.tex
+[66]) (inc/a-app.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\uppercase' on input line 1.
 
-runsystem(pygmentize -l csharp -f latex -P commandprefix=PYG -F tokenmerge -P s
-tripnl=False -o _minted-main/D02AB9A8D797311477FC0C14F338E43C39081DE57472D78201
-A2305212ED51CD.pygtex inc/ddos-deflate/Planner.cs)...executed.
-
 
 (_minted-main/D02AB9A8D797311477FC0C14F338E43C39081DE57472D78201A2305212ED51CD.
-pygtex [63
+pygtex [67
 
-] [64] [65]
+] [68] [69]
 Overfull \hbox (66.29648pt too wide) in paragraph at lines 65--65
 []\TU/ArialFamily/m/n/14.4 corresponding_jobtype_type.Add(corresponding_jobtype
 _job);|  
@@ -1956,13 +1989,13 @@ Overfull \hbox (40.80116pt too wide) in paragraph at lines 75--75
 //////[]|  
  []
 
-[66] [67] [68] [69] [70] [71] [72] [73] [74]
+[70] [71] [72] [73] [74] [75] [76] [77] [78]
 Overfull \hbox (5.80666pt too wide) in paragraph at lines 283--283
 []\TU/ArialFamily/m/n/14.4 Console.WriteLine(DateTime.Now.ToString([]"MM/dd/yyy
 y 
  []
 
-[75]
+[79]
 Overfull \hbox (14.44806pt too wide) in paragraph at lines 309--309
 [][]\TU/ArialFamily/m/it/14.4 //Console.WriteLine(bools_by_hour[i][j][k].Count(
 ));[]|  
@@ -1974,13 +2007,13 @@ Overfull \hbox (14.44804pt too wide) in paragraph at lines 313--313
 [] 
  []
 
-[76]
+[80]
 Overfull \hbox (5.80666pt too wide) in paragraph at lines 323--323
 []\TU/ArialFamily/m/n/14.4 Console.WriteLine(DateTime.Now.ToString([]"MM/dd/yyy
 y 
  []
 
-) [77])
+) [81])
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -2027,17 +2060,17 @@ The property list \__xpg_alias contains the pairs (without outer braces):
 >  {ru-petr1708/options}  =>  {spelling=old}.
  (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 545081901A9529A52299AB88FF33C546;13088.
+(rerunfilecheck)             Checksum: 51F227DB018F9F461C614CA22E7031B3;13088.
 runsystem(del main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 37639 strings out of 410967
- 742545 string characters out of 2829844
- 1097449 words of memory out of 3000000
- 57696 multiletter control sequences out of 15000+600000
+ 37574 strings out of 410967
+ 740720 string characters out of 2829844
+ 1096258 words of memory out of 3000000
+ 57626 multiletter control sequences out of 15000+600000
  475189 words of font info for 107 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 119i,15n,120p,1612b,864s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 119i,15n,120p,1612b,733s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on main.pdf (75 pages).
+Output written on main.pdf (79 pages).

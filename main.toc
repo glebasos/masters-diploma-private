@@ -1,38 +1,40 @@
 \selectlanguage *{russian}
-\contentsline {paragraph}{\centerline {{Перечень обозначений и сокращений}}\vspace {1.5em}}{5}{section*.1}%
-\contentsline {section}{\uppercase {Перечень обозначений и сокращений}}{5}{section*.1}%
-\contentsline {paragraph}{\centerline {{Введение}}\vspace {1.5em}}{7}{section*.2}%
-\contentsline {section}{\uppercase {Введение}}{7}{section*.2}%
-\contentsline {section}{\numberline {1}Анализ предметной области разработки, сравнение с аналогами}{10}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Описание предметной области с анализом существующих решений и их недостатков исходя из целей работы и критериев сравнения, которые должны соответствовать искомым решениям поставленных задач.}{10}{subsection.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1}МАС}{10}{subsubsection.1.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.2}Исследование операций}{12}{subsubsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.2}Разработка возможных направлений проведения исследований и методов решений отдельных задач}{13}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Обоснование применяемых технологий и инструментов.}{14}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Уточненная постановка задачи и требования к прототипу решения.}{17}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Выводы}{18}{subsection.1.5}%
-\contentsline {section}{\numberline {2}Проектирование}{20}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Проектирование архитектуры прототипа системы решения, включая разработку структуры (компоненты и связи между ними), внутреннего и внешнего функционирования.}{20}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Анализ доступных средств платформы .Net}{20}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Определение алгоритмов, по которым будет работать программный модуль}{21}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}Выбор типа базы данных и её провайдера.}{22}{subsubsection.2.1.3}%
-\contentsline {subsubsection}{\numberline {2.1.4}Проектирование архитектуры}{23}{subsubsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.2}Разработка прототипов алгоритмов, структур данных.}{25}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Типы данных Google OR-Tools}{25}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Определение требований к модели}{28}{subsubsection.2.2.2}%
-\contentsline {section}{\numberline {3}Реализация предлагаемого решения и его оценка}{29}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Реализация прототипа технического решения}{29}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Описание инструментов и форматов данных}{29}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Описание модели базы данных}{30}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Прототипирование ЕАМ-системы}{32}{subsubsection.3.1.3}%
-\contentsline {subsubsection}{\numberline {3.1.4}Моделирование системы средствами программирования в ограничениях}{37}{subsubsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.2}Экспериментальные исследования прототипа решения}{46}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Сравнение двух версий модели}{46}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Анализ работы итоговой версии модели}{47}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Выводы по итогам эксперимента}{57}{subsubsection.3.2.3}%
-\contentsline {paragraph}{\centerline {{ЗАКЛЮЧЕНИЕ}}\vspace {1.5em}}{59}{section*.34}%
-\contentsline {section}{\uppercase {ЗАКЛЮЧЕНИЕ}}{59}{section*.34}%
-\contentsline {paragraph}{\centerline {{Список использованных источников}}\vspace {1.5em}}{61}{section*.35}%
-\contentsline {section}{\uppercase {Список использованных источников}}{61}{section*.35}%
-\contentsline {paragraph}{\centerline {{Приложение А}}}{63}{section*.36}%
-\contentsline {section}{\uppercase {Приложение А}}{63}{section*.36}%
+\contentsline {paragraph}{\centerline {{Аннотация}}\vspace {1.5em}}{3}{section*.1}%
+\contentsline {paragraph}{\centerline {{Annotation}}\vspace {1.5em}}{5}{section*.2}%
+\contentsline {paragraph}{\centerline {{Перечень обозначений и сокращений}}\vspace {1.5em}}{9}{section*.3}%
+\contentsline {section}{\uppercase {Перечень обозначений и сокращений}}{9}{section*.3}%
+\contentsline {paragraph}{\centerline {{Введение}}\vspace {1.5em}}{11}{section*.4}%
+\contentsline {section}{\uppercase {Введение}}{11}{section*.4}%
+\contentsline {section}{\numberline {1}Анализ предметной области разработки, сравнение с аналогами}{14}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Описание предметной области с анализом существующих решений и их недостатков исходя из целей работы и критериев сравнения, которые должны соответствовать искомым решениям поставленных задач.}{14}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}МАС}{14}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Исследование операций}{16}{subsubsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.2}Разработка возможных направлений проведения исследований и методов решений отдельных задач}{17}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Обоснование применяемых технологий и инструментов.}{18}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Уточненная постановка задачи и требования к прототипу решения.}{21}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Выводы}{22}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Проектирование}{24}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Проектирование архитектуры прототипа системы решения, включая разработку структуры (компоненты и связи между ними), внутреннего и внешнего функционирования.}{24}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Анализ доступных средств платформы .Net}{24}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Определение алгоритмов, по которым будет работать программный модуль}{25}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Выбор типа базы данных и её провайдера.}{26}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Проектирование архитектуры}{27}{subsubsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.2}Разработка прототипов алгоритмов, структур данных.}{29}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Типы данных Google OR-Tools}{29}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Определение требований к модели}{32}{subsubsection.2.2.2}%
+\contentsline {section}{\numberline {3}Реализация предлагаемого решения и его оценка}{33}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Реализация прототипа технического решения}{33}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Описание инструментов и форматов данных}{33}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Описание модели базы данных}{34}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Прототипирование ЕАМ-системы}{36}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Моделирование системы средствами программирования в ограничениях}{41}{subsubsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.2}Экспериментальные исследования прототипа решения}{50}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Сравнение двух версий модели}{50}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Анализ работы итоговой версии модели}{51}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Выводы по итогам эксперимента}{61}{subsubsection.3.2.3}%
+\contentsline {paragraph}{\centerline {{ЗАКЛЮЧЕНИЕ}}\vspace {1.5em}}{63}{section*.31}%
+\contentsline {section}{\uppercase {ЗАКЛЮЧЕНИЕ}}{63}{section*.31}%
+\contentsline {paragraph}{\centerline {{Список использованных источников}}\vspace {1.5em}}{65}{section*.32}%
+\contentsline {section}{\uppercase {Список использованных источников}}{65}{section*.32}%
+\contentsline {paragraph}{\centerline {{Приложение А}}}{67}{section*.33}%
+\contentsline {section}{\uppercase {Приложение А}}{67}{section*.33}%
