@@ -1,0 +1,328 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{using}\PYG{+w}{ }\PYG{n+nn}{Google.OrTools.Sat}\PYG{p}{;}
+\PYG{k}{using}\PYG{+w}{ }\PYG{n+nn}{System}\PYG{p}{;}
+\PYG{k}{using}\PYG{+w}{ }\PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
+\PYG{k}{using}\PYG{+w}{ }\PYG{n+nn}{System.Linq}\PYG{p}{;}
+\PYG{k}{using}\PYG{+w}{ }\PYG{n+nn}{System.Threading.Tasks}\PYG{p}{;}
+
+\PYG{k}{namespace}\PYG{+w}{ }\PYG{n+nn}{PlanServer.Models}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{public}\PYG{+w}{ }\PYG{k}{static}\PYG{+w}{ }\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{Planner}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{private}\PYG{+w}{ }\PYG{k}{static}\PYG{+w}{ }\PYG{n}{IEnumerable}\PYG{p}{\PYGZlt{}}\PYG{n}{DateTime}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{EachDay}\PYG{p}{(}\PYG{n}{DateTime}\PYG{+w}{ }\PYG{k}{from}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{DateTime}\PYG{+w}{ }\PYG{n}{thru}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{day}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{from}\PYG{p}{.}\PYG{n}{Date}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{day}\PYG{p}{.}\PYG{n}{Date}\PYG{+w}{ }\PYG{p}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{thru}\PYG{p}{.}\PYG{n}{Date}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{day}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{day}\PYG{p}{.}\PYG{n}{AddDays}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{))}
+\PYG{+w}{                }\PYG{k}{yield}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{day}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{k}{public}\PYG{+w}{ }\PYG{k}{static}\PYG{+w}{ }\PYG{k}{async}\PYG{+w}{ }\PYG{n}{Task}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{OrToolsJob}\PYG{p}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{OROptimizeAsync}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{horizon}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{workers}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{workers\PYGZus{}job\PYGZus{}num}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{job\PYGZus{}types}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{job\PYGZus{}type\PYGZus{}num}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{OrToolsJob}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{jobs}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{DateTime}\PYG{+w}{ }\PYG{n}{reftime}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{DateTime}\PYG{+w}{ }\PYG{n}{lastday}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{OrToolsJob}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{result}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{await}\PYG{+w}{ }\PYG{n}{Task}\PYG{p}{.}\PYG{n}{Run}\PYG{p}{(()}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{OROptimize}\PYG{p}{(}\PYG{n}{horizon}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{workers}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{workers\PYGZus{}job\PYGZus{}num}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{job\PYGZus{}types}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{job\PYGZus{}type\PYGZus{}num}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{jobs}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{reftime}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{lastday}\PYG{p}{));}
+\PYG{+w}{            }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{result}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{k}{private}\PYG{+w}{ }\PYG{k}{static}\PYG{+w}{ }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{OrToolsJob}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{OROptimize}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{horizon}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{workers}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{workers\PYGZus{}job\PYGZus{}num}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{job\PYGZus{}types}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{job\PYGZus{}type\PYGZus{}num}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{OrToolsJob}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{jobs}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{DateTime}\PYG{+w}{ }\PYG{n}{reftime}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{DateTime}\PYG{+w}{ }\PYG{n}{lastday}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Defining model\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{            }\PYG{n}{CpModel}\PYG{+w}{ }\PYG{n}{model}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{CpModel}\PYG{p}{();}
+\PYG{+w}{            }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntervalVar}\PYG{p}{\PYGZgt{}\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{intervals\PYGZus{}by\PYGZus{}worker}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{            }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{BoolVar}\PYG{p}{\PYGZgt{}\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{bools\PYGZus{}by\PYGZus{}worker}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{            }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntVar}\PYG{p}{\PYGZgt{}\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{start\PYGZus{}by\PYGZus{}worker}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{            }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntVar}\PYG{p}{\PYGZgt{}\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{end\PYGZus{}by\PYGZus{}worker}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{            }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{corresponding\PYGZus{}jobtype\PYGZus{}worker}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{            }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{w}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{workers}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntervalVar}\PYG{p}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{intervals\PYGZus{}by\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{                }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{BoolVar}\PYG{p}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{bools\PYGZus{}by\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{                }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntVar}\PYG{p}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{start\PYGZus{}by\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{                }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntVar}\PYG{p}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{end\PYGZus{}by\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{                }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{corresponding\PYGZus{}jobtype\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{                }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{jt}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{job\PYGZus{}types}\PYG{p}{)}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                    }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntervalVar}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{intervals\PYGZus{}by\PYGZus{}job\PYGZus{}by\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{                    }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{BoolVar}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{bools\PYGZus{}by\PYGZus{}job\PYGZus{}by\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{                    }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntVar}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{start\PYGZus{}by\PYGZus{}job\PYGZus{}by\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{                    }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntVar}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{end\PYGZus{}by\PYGZus{}job\PYGZus{}by\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{                    }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{corresponding\PYGZus{}jobtype\PYGZus{}job}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{                    }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{job}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{jobs}\PYG{p}{)}
+\PYG{+w}{                    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{jt}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{n}{job}\PYG{p}{.}\PYG{n}{Type}\PYG{+w}{ }\PYG{p}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{w}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{n}{job}\PYG{p}{.}\PYG{n}{WorkerID}\PYG{p}{)}
+\PYG{+w}{                        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                            }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{performed\PYGZus{}at}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewBoolVar}\PYG{p}{(}\PYG{l+s}{\PYGZdl{}\PYGZdq{}performed by \PYGZob{}w\PYGZcb{}wID \PYGZob{}jt\PYGZcb{}type \PYGZob{}job.ID\PYGZcb{}jID\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{                            }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{start}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewIntVar}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{horizon}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdl{}\PYGZdq{}start of X \PYGZob{}jt\PYGZcb{} \PYGZob{}job.ID\PYGZcb{}\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{                            }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{end}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewIntVar}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{horizon}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdl{}\PYGZdq{}end of \PYGZob{}w\PYGZcb{} \PYGZob{}jt\PYGZcb{} \PYGZob{}job.ID\PYGZcb{}\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{                            }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{optint}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewOptionalIntervalVar}\PYG{p}{(}\PYG{n}{start}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{job}\PYG{p}{.}\PYG{n}{TimeSpanMinutes}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{end}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{performed\PYGZus{}at}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdl{}\PYGZdq{}interval of \PYGZob{}w\PYGZcb{} \PYGZob{}jt\PYGZcb{} \PYGZob{}job.ID\PYGZcb{}\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{                            }\PYG{n}{model}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{start}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{end}\PYG{p}{);}
+\PYG{+w}{                            }\PYG{n}{bools\PYGZus{}by\PYGZus{}job\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{performed\PYGZus{}at}\PYG{p}{);}
+\PYG{+w}{                            }\PYG{n}{intervals\PYGZus{}by\PYGZus{}job\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{optint}\PYG{p}{);}
+\PYG{+w}{                            }\PYG{n}{start\PYGZus{}by\PYGZus{}job\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{start}\PYG{p}{);}
+\PYG{+w}{                            }\PYG{n}{end\PYGZus{}by\PYGZus{}job\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{end}\PYG{p}{);}
+\PYG{+w}{                            }\PYG{n}{corresponding\PYGZus{}jobtype\PYGZus{}job}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{job}\PYG{p}{.}\PYG{n}{ID}\PYG{p}{);}
+\PYG{+w}{                        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{                    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{                    }\PYG{n}{intervals\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{intervals\PYGZus{}by\PYGZus{}job\PYGZus{}by\PYGZus{}type}\PYG{p}{);}
+\PYG{+w}{                    }\PYG{n}{bools\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{bools\PYGZus{}by\PYGZus{}job\PYGZus{}by\PYGZus{}type}\PYG{p}{);}
+\PYG{+w}{                    }\PYG{n}{start\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{start\PYGZus{}by\PYGZus{}job\PYGZus{}by\PYGZus{}type}\PYG{p}{);}
+\PYG{+w}{                    }\PYG{n}{end\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{end\PYGZus{}by\PYGZus{}job\PYGZus{}by\PYGZus{}type}\PYG{p}{);}
+\PYG{+w}{                    }\PYG{n}{corresponding\PYGZus{}jobtype\PYGZus{}type}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{corresponding\PYGZus{}jobtype\PYGZus{}job}\PYG{p}{);}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{                }\PYG{n}{intervals\PYGZus{}by\PYGZus{}worker}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{intervals\PYGZus{}by\PYGZus{}type}\PYG{p}{);}
+\PYG{+w}{                }\PYG{n}{bools\PYGZus{}by\PYGZus{}worker}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{bools\PYGZus{}by\PYGZus{}type}\PYG{p}{);}
+\PYG{+w}{                }\PYG{n}{start\PYGZus{}by\PYGZus{}worker}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{start\PYGZus{}by\PYGZus{}type}\PYG{p}{);}
+\PYG{+w}{                }\PYG{n}{end\PYGZus{}by\PYGZus{}worker}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{end\PYGZus{}by\PYGZus{}type}\PYG{p}{);}
+\PYG{+w}{                }\PYG{n}{corresponding\PYGZus{}jobtype\PYGZus{}worker}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{corresponding\PYGZus{}jobtype\PYGZus{}type}\PYG{p}{);}
+
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{            }\PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Model defined\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{            }\PYG{c+c1}{///////////////////////////////////////////////////////}
+\PYG{+w}{            }\PYG{c+c1}{///}
+\PYG{+w}{            }\PYG{c+c1}{//работы по рабочему}
+\PYG{+w}{            }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntervalVar}\PYG{p}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{jobIntervals\PYGZus{}by\PYGZus{}worker}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{            }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{w}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{intervals\PYGZus{}by\PYGZus{}worker}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{c+c1}{//List\PYGZlt{}IntervalVar\PYGZgt{} lst = new();}
+\PYG{+w}{                }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{flatlist}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{w}\PYG{p}{.}\PYG{n}{SelectMany}\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{).}\PYG{n}{ToList}\PYG{p}{();}
+\PYG{+w}{                }\PYG{n}{jobIntervals\PYGZus{}by\PYGZus{}worker}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{flatlist}\PYG{p}{);}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{c+c1}{//определим нерабочие (ночные интервалы) \PYGZhy{} допустим с 9 утра до 9 вечера}
+\PYG{+w}{            }\PYG{c+c1}{//даты планирования выбираются с 00:00 по 00:00}
+\PYG{+w}{            }\PYG{c+c1}{//отсюда каждый день можно без проблем на N смен (зависят от типа работы/рабочего \PYGZhy{} ?)}
+\PYG{+w}{            }\PYG{c+c1}{//0 + 540 =\PYGZgt{} ночь; +720 =\PYGZgt{} день; + 180 =\PYGZgt{} остатки ночи}
+\PYG{+w}{            }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntervalVar}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{sleepIntervals}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{            }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{dayCounter}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}
+
+\PYG{+w}{            }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{DateTime}\PYG{+w}{ }\PYG{n}{day}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{EachDay}\PYG{p}{(}\PYG{n}{reftime}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{lastday}\PYG{p}{))}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{                }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{st}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{dayCounter}\PYG{+w}{ }\PYG{p}{*}\PYG{+w}{ }\PYG{l+m}{1440}\PYG{p}{;}
+\PYG{+w}{                }
+\PYG{+w}{                }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{((}\PYG{n}{day}\PYG{p}{.}\PYG{n}{DayOfWeek}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{n}{DayOfWeek}\PYG{p}{.}\PYG{n}{Saturday}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{||}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{day}\PYG{p}{.}\PYG{n}{DayOfWeek}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{n}{DayOfWeek}\PYG{p}{.}\PYG{n}{Sunday}\PYG{p}{))}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                    }\PYG{c+c1}{//по выходным не работаем}
+\PYG{+w}{                    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{fin1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{st}\PYG{+w}{ }\PYG{p}{+}\PYG{+w}{ }\PYG{l+m}{1440}\PYG{p}{;}
+\PYG{+w}{                    }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{siSS}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewIntervalVar}\PYG{p}{(}\PYG{n}{st}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{1440}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fin1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdl{}\PYGZdq{}sat/sun \PYGZob{}dayCounter\PYGZcb{}\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{                    }\PYG{n}{sleepIntervals}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{siSS}\PYG{p}{);}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{                }\PYG{k}{else}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                    }\PYG{c+c1}{//по будням \PYGZhy{} с 9 до 9}
+\PYG{+w}{                    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{fin}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{st}\PYG{+w}{ }\PYG{p}{+}\PYG{+w}{ }\PYG{l+m}{540}\PYG{p}{;}
+\PYG{+w}{                    }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{si}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewIntervalVar}\PYG{p}{(}\PYG{n}{st}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{540}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fin}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdl{}\PYGZdq{}sleep 1 of day \PYGZob{}dayCounter\PYGZcb{}\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{                    }\PYG{n}{sleepIntervals}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{si}\PYG{p}{);}
+\PYG{+w}{                    }\PYG{n}{st}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fin}\PYG{+w}{ }\PYG{p}{+}\PYG{+w}{ }\PYG{l+m}{720}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//пропускаем рабочие 12 часов}
+\PYG{+w}{                    }\PYG{n}{fin}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{st}\PYG{+w}{ }\PYG{p}{+}\PYG{+w}{ }\PYG{l+m}{180}\PYG{p}{;}
+\PYG{+w}{                    }\PYG{c+c1}{//второй ночной интервал}
+\PYG{+w}{                    }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{si2}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{model}\PYG{p}{.}\PYG{n}{NewIntervalVar}\PYG{p}{(}\PYG{n}{st}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{180}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fin}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdl{}\PYGZdq{}sleep 2 of day \PYGZob{}dayCounter\PYGZcb{}\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{                    }\PYG{n}{sleepIntervals}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{si2}\PYG{p}{);}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{                }
+\PYG{+w}{                }\PYG{n}{dayCounter}\PYG{p}{++;}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+
+\PYG{+w}{            }\PYG{c+c1}{//работы одного рабочего не пересекаются}
+\PYG{+w}{            }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{ji}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{jobIntervals\PYGZus{}by\PYGZus{}worker}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{ji}\PYG{p}{.}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{sleepIntervals}\PYG{p}{);}
+\PYG{+w}{                }\PYG{n}{model}\PYG{p}{.}\PYG{n}{AddNoOverlap}\PYG{p}{(}\PYG{n}{ji}\PYG{p}{);}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+
+\PYG{+w}{            }\PYG{c+c1}{///////////////////////////////////////////}
+\PYG{+w}{            }\PYG{c+c1}{///разделяем работы по типу работы}
+\PYG{+w}{            }\PYG{c+c1}{///}
+\PYG{+w}{            }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntervalVar}\PYG{p}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{jobIntervals\PYGZus{}by\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+
+\PYG{+w}{            }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{t}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{job\PYGZus{}types}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntervalVar}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{jlst}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{                }\PYG{n}{jobIntervals\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{jlst}\PYG{p}{);}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{i\PYGZus{}worker}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{intervals\PYGZus{}by\PYGZus{}worker}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i\PYGZus{}type}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{i\PYGZus{}worker}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i\PYGZus{}type}\PYG{p}{++)}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                    }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{jflatlist}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{i\PYGZus{}worker}\PYG{p}{[}\PYG{n}{i\PYGZus{}type}\PYG{p}{];}
+\PYG{+w}{                    }\PYG{n}{jobIntervals\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{i\PYGZus{}type}\PYG{p}{].}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{jflatlist}\PYG{p}{);}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{c+c1}{//для каждого типа работы \PYGZhy{} все работы не пересекаются}
+\PYG{+w}{            }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{ji}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{jobIntervals\PYGZus{}by\PYGZus{}type}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }
+\PYG{+w}{                }\PYG{n}{model}\PYG{p}{.}\PYG{n}{AddNoOverlap}\PYG{p}{(}\PYG{n}{ji}\PYG{p}{);}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{c+c1}{////////////////////////////////////////////}
+\PYG{+w}{            }\PYG{c+c1}{///разделяем performed\PYGZus{}at по типам работы}
+\PYG{+w}{            }\PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}разделяем performed\PYGZus{}at по типам работы\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{            }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{BoolVar}\PYG{p}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{performedAt\PYGZus{}by\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+
+\PYG{+w}{            }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{t}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{job\PYGZus{}types}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{BoolVar}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{perflist}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{                }\PYG{n}{performedAt\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{perflist}\PYG{p}{);}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{b\PYGZus{}worker}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{bools\PYGZus{}by\PYGZus{}worker}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{b\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{b\PYGZus{}type}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{b\PYGZus{}worker}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{b\PYGZus{}type}\PYG{p}{++)}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                    }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{flatperf}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{b\PYGZus{}worker}\PYG{p}{[}\PYG{n}{b\PYGZus{}type}\PYG{p}{];}
+\PYG{+w}{                    }\PYG{n}{performedAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{b\PYGZus{}type}\PYG{p}{].}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{flatperf}\PYG{p}{);}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{            }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{performedAt\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{++)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{model}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{LinearExpr}\PYG{p}{.}\PYG{n}{Sum}\PYG{p}{(}\PYG{n}{performedAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}\PYG{+w}{ }\PYG{p}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{job\PYGZus{}type\PYGZus{}num}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{            }\PYG{c+c1}{//////////////////////////////////}
+\PYG{+w}{            }\PYG{c+c1}{///разделяем performed\PYGZus{}at по рабочим}
+\PYG{+w}{            }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{BoolVar}\PYG{p}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{performedAt\PYGZus{}by\PYGZus{}worker}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+
+\PYG{+w}{            }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{t}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{bools\PYGZus{}by\PYGZus{}worker}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{c+c1}{//List\PYGZlt{}IntVar\PYGZgt{} worklist = new();}
+\PYG{+w}{                }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{flatwork}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{t}\PYG{p}{.}\PYG{n}{SelectMany}\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{).}\PYG{n}{ToList}\PYG{p}{();}\PYG{+w}{ }\PYG{p}{;}
+\PYG{+w}{                }\PYG{n}{performedAt\PYGZus{}by\PYGZus{}worker}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{flatwork}\PYG{p}{);}\PYG{+w}{ }\PYG{p}{;}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+
+\PYG{+w}{            }\PYG{c+c1}{//для каждого рабочего колво работ запланированных \PYGZlt{}= необходимому}
+\PYG{+w}{            }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{performedAt\PYGZus{}by\PYGZus{}worker}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{++)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{model}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{LinearExpr}\PYG{p}{.}\PYG{n}{Sum}\PYG{p}{(}\PYG{n}{performedAt\PYGZus{}by\PYGZus{}worker}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}\PYG{+w}{ }\PYG{p}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{workers\PYGZus{}job\PYGZus{}num}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{c+c1}{/////////////////////////////}
+\PYG{+w}{            }\PYG{c+c1}{///}
+\PYG{+w}{            }\PYG{c+c1}{//разделим старты и концы работ по типам}
+\PYG{+w}{            }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntVar}\PYG{p}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{startAt\PYGZus{}by\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+
+\PYG{+w}{            }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{t}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{job\PYGZus{}types}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntVar}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{perflist}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{                }\PYG{n}{startAt\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{perflist}\PYG{p}{);}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{s\PYGZus{}worker}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{start\PYGZus{}by\PYGZus{}worker}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{s\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{s\PYGZus{}type}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{s\PYGZus{}worker}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{s\PYGZus{}type}\PYG{p}{++)}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                    }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{flatstart}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{s\PYGZus{}worker}\PYG{p}{[}\PYG{n}{s\PYGZus{}type}\PYG{p}{];}
+\PYG{+w}{                    }\PYG{n}{startAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{s\PYGZus{}type}\PYG{p}{].}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{flatstart}\PYG{p}{);}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntVar}\PYG{p}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{endAt\PYGZus{}by\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+
+\PYG{+w}{            }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{t}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{job\PYGZus{}types}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{IntVar}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{perflist}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+\PYG{+w}{                }\PYG{n}{endAt\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{perflist}\PYG{p}{);}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{k}{foreach}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{s\PYGZus{}worker}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{end\PYGZus{}by\PYGZus{}worker}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{s\PYGZus{}type}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{s\PYGZus{}type}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{s\PYGZus{}worker}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{s\PYGZus{}type}\PYG{p}{++)}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                    }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{flatend}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{s\PYGZus{}worker}\PYG{p}{[}\PYG{n}{s\PYGZus{}type}\PYG{p}{];}
+\PYG{+w}{                    }\PYG{n}{endAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{s\PYGZus{}type}\PYG{p}{].}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{flatend}\PYG{p}{);}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{c+c1}{//соблюдай\PYGZhy{}ка порядок работ}
+\PYG{+w}{            }\PYG{c+c1}{//проходим все типы работ что попались}
+\PYG{+w}{            }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{startAt\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{k}\PYG{p}{++)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{k+kt}{string}\PYG{+w}{ }\PYG{n}{varname}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{startAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{k}\PYG{p}{][}\PYG{l+m}{0}\PYG{p}{].}\PYG{n}{Name}\PYG{p}{();}
+\PYG{+w}{                }\PYG{n}{varname}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{varname}\PYG{p}{.}\PYG{n}{Substring}\PYG{p}{(}\PYG{l+m}{11}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{1}\PYG{p}{);}
+\PYG{+w}{                }\PYG{c+c1}{//если тип третий}
+\PYG{+w}{                }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Int32}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{varname}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{l+m}{3}\PYG{p}{)}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                    }\PYG{c+c1}{//foreach (var s in startAt\PYGZus{}by\PYGZus{}type[k])}
+\PYG{+w}{                    }\PYG{c+c1}{//\PYGZob{}}
+
+\PYG{+w}{                    }\PYG{c+c1}{//\PYGZcb{}}
+\PYG{+w}{                    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{startAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{k}\PYG{p}{].}\PYG{n}{Count}\PYG{+w}{ }\PYG{p}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m}{1}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{++)}
+\PYG{+w}{                    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                        }\PYG{n}{model}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{startAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{k}\PYG{p}{][}\PYG{n}{i}\PYG{+w}{ }\PYG{p}{+}\PYG{+w}{ }\PYG{l+m}{1}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{endAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{k}\PYG{p}{][}\PYG{n}{i}\PYG{p}{]);}
+\PYG{+w}{                    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{c+c1}{//для третьего типа(плановая работа) \PYGZhy{} работы не чаще раза в день}
+\PYG{+w}{            }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{startAt\PYGZus{}by\PYGZus{}type}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{k}\PYG{p}{++)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{k+kt}{string}\PYG{+w}{ }\PYG{n}{varname}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{startAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{k}\PYG{p}{][}\PYG{l+m}{0}\PYG{p}{].}\PYG{n}{Name}\PYG{p}{();}
+\PYG{+w}{                }\PYG{k+kt}{string}\PYG{+w}{ }\PYG{n}{secondvarname}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{varname}\PYG{p}{;}
+\PYG{+w}{                }\PYG{n}{varname}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{varname}\PYG{p}{.}\PYG{n}{Substring}\PYG{p}{(}\PYG{l+m}{11}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{1}\PYG{p}{);}
+\PYG{+w}{                }\PYG{c+c1}{//если тип третий}
+\PYG{+w}{                }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{varname}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{)}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                    }\PYG{n}{varname}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{secondvarname}\PYG{p}{.}\PYG{n}{Substring}\PYG{p}{(}\PYG{l+m}{11}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{2}\PYG{p}{);}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{                }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Int32}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{varname}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{l+m}{3}\PYG{+w}{ }\PYG{p}{||}\PYG{+w}{ }\PYG{n}{Int32}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{varname}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{l+m}{13}\PYG{p}{)}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{startAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{k}\PYG{p}{].}\PYG{n}{Count}\PYG{+w}{ }\PYG{p}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m}{1}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{++)}
+\PYG{+w}{                    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                        }\PYG{n}{model}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{startAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{k}\PYG{p}{][}\PYG{n}{i}\PYG{+w}{ }\PYG{p}{+}\PYG{+w}{ }\PYG{l+m}{1}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{endAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{k}\PYG{p}{][}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{\PYGZgt{}=}\PYG{+w}{ }\PYG{l+m}{1440}\PYG{p}{).}\PYG{n}{OnlyEnforceIf}\PYG{p}{(}\PYG{n}{performedAt\PYGZus{}by\PYGZus{}type}\PYG{p}{[}\PYG{n}{k}\PYG{p}{][}\PYG{n}{i}\PYG{p}{]);}
+\PYG{+w}{                        }\PYG{c+c1}{//model.Add(startAt\PYGZus{}by\PYGZus{}type[k][i + 1] \PYGZgt{} endAt\PYGZus{}by\PYGZus{}type[k][i]);}
+\PYG{+w}{                    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+
+
+\PYG{+w}{            }\PYG{c+c1}{///////////////////////////}
+
+\PYG{+w}{            }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{flatbools}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{bools\PYGZus{}by\PYGZus{}worker}\PYG{p}{.}\PYG{n}{SelectMany}\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{).}\PYG{n}{SelectMany}\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{);}
+\PYG{+w}{            }\PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Starting Optimization at:\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{            }\PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{n}{DateTime}\PYG{p}{.}\PYG{n}{Now}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}MM/dd/yyyy HH:mm:ss\PYGZdq{}}\PYG{p}{));}
+\PYG{+w}{            }\PYG{c+c1}{//целевая функция \PYGZhy{} максимизировать количество работ}
+\PYG{+w}{            }\PYG{n}{model}\PYG{p}{.}\PYG{n}{Maximize}\PYG{p}{(}\PYG{n}{LinearExpr}\PYG{p}{.}\PYG{n}{Sum}\PYG{p}{(}\PYG{n}{flatbools}\PYG{p}{));}
+\PYG{+w}{            }\PYG{c+c1}{//Console.WriteLine(\PYGZdq{}test\PYGZdq{});}
+\PYG{+w}{            }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{solver}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{CpSolver}\PYG{p}{();}
+\PYG{+w}{            }\PYG{n}{solver}\PYG{p}{.}\PYG{n}{StringParameters}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}num\PYGZus{}search\PYGZus{}workers:1\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{            }\PYG{k+kt}{var}\PYG{+w}{ }\PYG{n}{status}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{solver}\PYG{p}{.}\PYG{n}{Solve}\PYG{p}{(}\PYG{n}{model}\PYG{p}{);}
+
+\PYG{+w}{            }\PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{            }\PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Всего работ:\PYGZdq{}}\PYG{+w}{ }\PYG{p}{+}\PYG{+w}{ }\PYG{n}{jobs}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{());}
+\PYG{+w}{            }\PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Распределено работ: \PYGZdq{}}\PYG{+w}{ }\PYG{p}{+}\PYG{+w}{ }\PYG{n}{solver}\PYG{p}{.}\PYG{n}{ObjectiveValue}\PYG{p}{);}
+\PYG{+w}{            }\PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{            }\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{OrToolsJob}\PYG{p}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{PlannedJobs}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{p}{();}
+
+\PYG{+w}{            }\PYG{c+c1}{//принтим если есть решение}
+\PYG{+w}{            }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{status}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{n}{CpSolverStatus}\PYG{p}{.}\PYG{n}{Feasible}\PYG{+w}{ }\PYG{p}{||}\PYG{+w}{ }\PYG{n}{status}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{n}{CpSolverStatus}\PYG{p}{.}\PYG{n}{Optimal}\PYG{+w}{ }\PYG{p}{||}\PYG{+w}{ }\PYG{n}{status}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{n}{CpSolverStatus}\PYG{p}{.}\PYG{n}{Unknown}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{w}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{w}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{workers}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{w}\PYG{p}{++)}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{                    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{jt}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{jt}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{job\PYGZus{}types}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{jt}\PYG{p}{++)}
+\PYG{+w}{                    }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{                        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{job}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{job}\PYG{+w}{ }\PYG{p}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{bools\PYGZus{}by\PYGZus{}worker}\PYG{p}{[}\PYG{n}{w}\PYG{p}{][}\PYG{n}{jt}\PYG{p}{].}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{job}\PYG{p}{++)}
+\PYG{+w}{                        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                            }\PYG{c+c1}{//Console.WriteLine(bools\PYGZus{}by\PYGZus{}hour[i][j][k].Count());}
+\PYG{+w}{                            }\PYG{c+c1}{//Console.WriteLine(\PYGZdq{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZdq{});}
+\PYG{+w}{                            }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{solver}\PYG{p}{.}\PYG{n}{Value}\PYG{p}{(}\PYG{n}{bools\PYGZus{}by\PYGZus{}worker}\PYG{p}{[}\PYG{n}{w}\PYG{p}{][}\PYG{n}{jt}\PYG{p}{][}\PYG{n}{job}\PYG{p}{])}\PYG{+w}{ }\PYG{p}{==}\PYG{+w}{ }\PYG{l+m}{1}\PYG{p}{)}
+\PYG{+w}{                            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                                }\PYG{n}{PlannedJobs}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{k}{new}\PYG{+w}{ }\PYG{n}{OrToolsJob}\PYG{p}{(}\PYG{n}{corresponding\PYGZus{}jobtype\PYGZus{}worker}\PYG{p}{[}\PYG{n}{w}\PYG{p}{][}\PYG{n}{jt}\PYG{p}{][}\PYG{n}{job}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{job\PYGZus{}types}\PYG{p}{[}\PYG{n}{jt}\PYG{p}{],}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{)}\PYG{n}{solver}\PYG{p}{.}\PYG{n}{Value}\PYG{p}{(}\PYG{n}{start\PYGZus{}by\PYGZus{}worker}\PYG{p}{[}\PYG{n}{w}\PYG{p}{][}\PYG{n}{jt}\PYG{p}{][}\PYG{n}{job}\PYG{p}{]),}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{)}\PYG{n}{solver}\PYG{p}{.}\PYG{n}{Value}\PYG{p}{(}\PYG{n}{end\PYGZus{}by\PYGZus{}worker}\PYG{p}{[}\PYG{n}{w}\PYG{p}{][}\PYG{n}{jt}\PYG{p}{][}\PYG{n}{job}\PYG{p}{]),}\PYG{+w}{ }\PYG{n}{reftime}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{workers}\PYG{p}{[}\PYG{n}{w}\PYG{p}{]));}
+\PYG{+w}{                                }\PYG{c+c1}{//для каждого воркера, каждый джобтайп, каждая работа конкретного типа \PYGZhy{} начало + конец}
+\PYG{+w}{                            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{                        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{                    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{            }\PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Finished at:\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{            }\PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{n}{DateTime}\PYG{p}{.}\PYG{n}{Now}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}MM/dd/yyyy HH:mm:ss\PYGZdq{}}\PYG{p}{));}
+\PYG{+w}{            }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{PlannedJobs}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
