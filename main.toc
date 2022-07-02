@@ -1,6 +1,6 @@
 \selectlanguage *{russian}
-\contentsline {paragraph}{\centerline {{Аннотация}}\vspace {1.5em}}{3}{section*.1}%
-\contentsline {paragraph}{\centerline {{Annotation}}\vspace {1.5em}}{5}{section*.2}%
+\contentsline {paragraph}{\centerline {{Реферат}}\vspace {1.5em}}{3}{section*.1}%
+\contentsline {paragraph}{\centerline {{Abstract}}\vspace {1.5em}}{5}{section*.2}%
 \contentsline {paragraph}{\centerline {{Перечень обозначений и сокращений}}\vspace {1.5em}}{9}{section*.3}%
 \contentsline {section}{\uppercase {Перечень обозначений и сокращений}}{9}{section*.3}%
 \contentsline {paragraph}{\centerline {{Введение}}\vspace {1.5em}}{11}{section*.4}%

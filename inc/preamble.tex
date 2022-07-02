@@ -185,7 +185,7 @@
 \titleformat{\subsubsection}[block]{\bfseries\vspace{1em}\normalsize}{}{12.5mm}{\thesubsubsection\quad#1\vspace{0.5em}}
 \titleformat{\paragraph}[block]{\bfseries\normalsize}{}{12.5mm}{\MakeTextUppercase{#1}}
 
-% Секции без номеров (введение, заключение...), вместо section*{}
+% Секции для аннотаций, чтоб не были видны в содержании
 \newcommand{\annotsection}[1]{
     \phantomsection % Корректный переход по ссылкам в содержании
     \paragraph{\centerline{{#1}}\vspace{1.5em}}
@@ -222,4 +222,4 @@
     }
 \makeatother
 
-\setcounter{page}{3} % Начало нумерации страниц
+\setcounter{page}{1} % Начало нумерации страниц
